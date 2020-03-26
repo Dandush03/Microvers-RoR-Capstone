@@ -25,5 +25,4 @@ class CulturesControllerTest < ActionDispatch::IntegrationTest
   #   get cultures_delete_url
   #   assert_response :success
   # end
-
 end
