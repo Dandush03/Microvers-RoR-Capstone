@@ -3,7 +3,7 @@ class CreateCultures < ActiveRecord::Migration[6.0]
     create_table :cultures do |t|
       t.string :text
 
-      t.references :user, references: :users, foreign_key: { to_table: :users}
+      t.references :user, references: :users, foreign_key: { to_table: :users }
 
       t.timestamps
     end
