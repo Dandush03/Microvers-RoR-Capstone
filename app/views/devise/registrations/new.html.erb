@@ -4,8 +4,13 @@
   <%= render "devise/shared/error_messages", resource: resource %>
 
   <div class="field">
+    <%= f.label "#{:cover_img}: " %>
+    <%= f.file_field :cover_img, direct_upload: true %>
+  </div>
+
+  <div class="field">
     <%= f.label "#{:profile_img}: " %>
-    <%= f.file_field :profile_img, autofocus: true, autocomplete: "username", placeholder: 'Full Name' %>
+    <%= f.file_field :profile_img, direct_upload: true  %>
   </div>
 
   <div class="field">
