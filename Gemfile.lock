@@ -255,6 +255,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  activestorage
   bootsnap
   bootstrap-sass
   byebug

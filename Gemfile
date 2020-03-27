@@ -4,7 +4,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.6.5'
 
 gem 'devise'
-
+gem 'activestorage'
 gem 'bootsnap', require: false
 gem 'bootstrap-sass'
 gem 'jbuilder'
