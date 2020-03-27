@@ -4,7 +4,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.6.5'
 
 gem 'devise'
-
+gem 'activestorage'
 gem 'bootsnap', require: false
 gem 'bootstrap-sass'
 gem 'jbuilder'
@@ -13,6 +13,7 @@ gem 'rails'
 gem 'sass-rails'
 gem 'turbolinks'
 gem 'webpacker'
+gem 'cloudinary'
 
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]

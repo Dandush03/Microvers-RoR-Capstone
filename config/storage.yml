@@ -14,6 +14,10 @@ local:
 #   region: us-east-1
 #   bucket: your_own_bucket
 
+# adding Claudinary Services
+cloudinary:      
+  service: Cloudinary
+
 # Remember not to checkin your GCS keyfile to a repository
 # google:
 #   service: GCS
