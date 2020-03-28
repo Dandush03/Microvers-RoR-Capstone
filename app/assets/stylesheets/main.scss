@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: https://sass-lang.com/
 $space: 5px;
 $font-size: 1em;
-$body-color: rgba(98, 141, 162, 1);
+$body-color: linear-gradient(170deg, rgb(106, 175, 208), rgb(100, 129, 129));
 $link-btn-color: rgba(36, 49, 71, 0.7);
 $link-color: white;
 
@@ -11,11 +11,16 @@ $link-color: white;
   box-sizing: border-box;
 }
 
+html {
+  min-height: 100%;
+}
+
 body {
-  background-color: $body-color;
+  background: $body-color;
   position: relative;
   margin: 0;
   padding: 0;
+  min-height: 100%;
 }
 
 .navbar-user {

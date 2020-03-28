@@ -6,13 +6,13 @@
       <%= render 'layouts/user_log'%>
     </header>
     <section>
-    <nav></nav>
+      <nav></nav>
     </section>
     <main><%= yield %></main>
     <footer></footer>
     <% if user_signed_in? %>
-    <img src="<%= url_for(current_user.profile_img) if  url_for(current_user.profile_img)%>">
-    <img src="<%= url_for(current_user.cover_img) if url_for(current_user.cover_img)%>">
+      <img src="<%= url_for(current_user.profile_img) if  url_for(current_user.profile_img)%>">
+      <img src="<%= url_for(current_user.cover_img) if url_for(current_user.cover_img)%>">
     <% end %>
   </body>
 </html>
