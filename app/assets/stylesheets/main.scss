@@ -1,0 +1,15 @@
+// Place all the styles related to the Cultures controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+$body-color: rgba(98, 141, 162, 1);
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+	background-color: $body-color;
+	position: relative;
+	margin: 0;
+	padding: 0;
+}
