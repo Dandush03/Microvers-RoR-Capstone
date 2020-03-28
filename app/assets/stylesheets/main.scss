@@ -1,15 +1,61 @@
 // Place all the styles related to the Cultures controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+$space: 5px;
+$font-size: 1em;
 $body-color: rgba(98, 141, 162, 1);
+$link-btn-color: rgba(36, 49, 71, 0.7);
+$link-color: white;
 
 * {
   box-sizing: border-box;
 }
 
 body {
-	background-color: $body-color;
-	position: relative;
-	margin: 0;
-	padding: 0;
+  background-color: $body-color;
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-user {
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: row;
+
+  &>:nth-child(even) {
+    background-color: $link-btn-color*2;
+    color: $link-color;
+  }
+
+  &>:nth-child(odd) {
+    background-color: $link-btn-color*3;
+    color: $link-color;
+  }
+
+  &>:first-child {
+    &::before {
+      content: "";
+    }
+  }
+
+  a {
+    border: $space/5 solid $link-color;
+    ;
+    border-radius: $space;
+    padding: $space*2;
+    margin: $space*2;
+    text-decoration: none;
+    position: relative;
+
+    &::before {
+      font-size: $font-size*1.5;
+      line-height: $font-size*.5;
+      position: absolute;
+      content: "|";
+      color: $link-color;
+      display: block;
+      right: calc(100% + #{$space*1.5});
+    }
+  }
 }

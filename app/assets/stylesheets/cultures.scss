@@ -47,8 +47,8 @@ $font-size:1em;
       flex-direction: column;
 
       &>p {
-				color: $form-warning-title-color;
-			}
+        color: $form-warning-title-color;
+      }
 
       &>ul {
         width: 90%;
@@ -95,14 +95,14 @@ $font-size:1em;
       }
     }
 
-    &>.remember{
+    &>.remember {
       margin: 0 $space*6;
       color: $form-input-color;
     }
 
     &>.actions {
       display: flex;
-      margin: $space*8 $space*6;
+      margin: $space*8 $space*6 $space*12 $space*6;
 
       &>input {
         padding: $space*2;
@@ -115,15 +115,32 @@ $font-size:1em;
       }
     }
   }
-  &>.links{
-    display: flex;
-    align-self: center;
-    margin-bottom: $space*6;
-    &>a{
-      margin: $space*2;
-      text-decoration: none;
-      color: $form-warning-title-color;
+}
+
+.links {
+  display: flex;
+  align-self: center;
+  margin-bottom: $space*6;
+
+  &>:first-child {
+    &::before {
+      content: "";
     }
+  }
+
+  &>a {
+    margin: $space*3;
+    text-decoration: none;
+    color: $form-warning-title-color;
+    position: relative;
+
+    &::before {
+      position: absolute;
+      content: "|";
+      display: block;
+      right: calc(100% + #{$space*3});
+    }
+
   }
 }
 
