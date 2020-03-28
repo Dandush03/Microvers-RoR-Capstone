@@ -95,20 +95,34 @@ $font-size:1em;
       }
     }
 
+    &>.remember{
+      margin: 0 $space*6;
+      color: $form-input-color;
+    }
+
     &>.actions {
       display: flex;
-      margin: 0 $space*6;
+      margin: $space*8 $space*6;
 
       &>input {
         padding: $space*2;
         margin: auto;
         width: 100%;
-        margin-bottom: $space*8;
         color: $form-input-color;
         background-color: $form-field-color*3;
         border: white solid $space/5;
         border-radius: $space;
       }
+    }
+  }
+  &>.links{
+    display: flex;
+    align-self: center;
+    margin-bottom: $space*6;
+    &>a{
+      margin: $space*2;
+      text-decoration: none;
+      color: $form-warning-title-color;
     }
   }
 }
