@@ -1,0 +1,21 @@
+<% if @user.id == current_user.id %>
+  <section class="cover">
+    <figure class="self-cover">
+      <%= form_for(current_user, url: registration_path(current_user), html: { method: :put, :id => 'form' }) do |f| %>
+        <%= render "devise/shared/error_messages", resource: current_user %>
+        <%= f.file_field :cover_img, direct_upload: true, :accept => "image/*" %>
+      <% end %>
+      <a href="" id="uploader">
+        <img src="<%= url_for(current_user.cover_img) if @user.cover_img.attached? %>">
+      </a>
+    </figure>
+  </section>
+  <%= render 'script'%>
+<% else %>
+  <section class="cover">
+    <figure class="viewer-cover">
+      <img src="<%= url_for(@user.cover_img) if @user.cover_img.attached? %>">
+      <%= image_tag("cover-img.png") unless @user.cover_img.attached? %>
+    </figure>
+  </section>
+<% end %>

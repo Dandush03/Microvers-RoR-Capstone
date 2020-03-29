@@ -2,17 +2,21 @@
 <html>
   <%= render 'layouts/head'%>
   <body>
-    <header>
-      <%= render 'layouts/user_log'%>
-    </header>
-    <section>
-      <nav></nav>
-    </section>
-    <main><%= yield %></main>
-    <footer></footer>
-    <% if user_signed_in? %>
-      <img src="<%= url_for(current_user.profile_img) if  url_for(current_user.profile_img)%>">
-      <img src="<%= url_for(current_user.cover_img) if url_for(current_user.cover_img)%>">
+    <% if current_page?(user_session_path) || current_page?(new_user_registration_path) %>
+      <main><%= yield %></main>
+      <header>
+        <%= render 'layouts/user_log'%>
+      </header>
+
+    <%else%>
+      <div class="grid-layouts">
+        <header>
+          <%= render 'layouts/user_log'%>
+        </header>
+        <menu>menu</menu>
+        <main><%= yield %>main</main>
+      </div>
     <% end %>
   </body>
 </html>
+

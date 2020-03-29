@@ -1,6 +1,7 @@
 // Place all the styles related to the Cultures controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+$pad-width: 768px;
 $space: 5px;
 $font-size: 1em;
 $body-color: linear-gradient(170deg, rgb(106, 175, 208), rgb(100, 129, 129));
@@ -62,5 +63,34 @@ body {
       display: block;
       right: calc(100% + #{$space*1.5});
     }
+  }
+}
+
+
+
+@media only screen and (min-width: $pad-width) {
+  .grid-layouts {
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    grid-template-rows: $space*15 calc(100% - #{$space*15});
+    grid-template-areas: 'menu header header'
+      'menu main main';
+    min-height: 100vh;
+    background-color: red;
+  }
+
+  menu {
+    grid-area: menu;
+    background-color: burlywood;
+  }
+
+  header {
+    grid-area: header;
+    background-color: wheat;
+  }
+
+  main {
+    grid-area: main;
+    background-color: violet;
   }
 }

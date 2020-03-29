@@ -1,0 +1,92 @@
+$pad-width: 768px;
+$space: 5px;
+$font-size: 1em;
+
+.cover {
+  grid-area: wrapper;
+  display: flex;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+
+  &>figure.self-cover {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+
+    &>form {
+      display: none;
+    }
+
+    &>a {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      display: block;
+
+
+      &:hover::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: image-url('upload.svg');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        opacity: 0.5;
+        z-index: 10;
+      }
+
+      &>img {
+        width: 100%;
+        height: auto;
+        padding-bottom: 100%;
+        position: absolute;
+      }
+    }
+  }
+
+  &>figure.viewer-cover {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    position: relative;
+
+    &>img {
+      width: 100%;
+      height: auto;
+      padding-bottom: 100%;
+      position: absolute;
+    }
+  }
+}
+
+
+@media only screen and (min-width: $pad-width) {
+  .user-show {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-rows: $space*60 calc(100% - #{$space*60});
+    grid-template-areas: 'cover cover profile'
+      'content content profile';
+    min-height: 100vh;
+    background-color: red;
+  }
+
+  .profile {
+    grid-area: profile;
+  }
+
+  .content {
+    grid-area: content;
+  }
+
+  .cover {
+    grid-area: cover;
+  }
+}
