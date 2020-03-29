@@ -15,6 +15,7 @@ gem 'sass-rails'
 gem 'turbolinks'
 gem 'webpacker'
 
+
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'sqlite3'

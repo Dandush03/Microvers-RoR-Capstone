@@ -3,6 +3,7 @@
     <figure class="self-cover">
       <%= form_for(current_user, url: registration_path(current_user), html: { method: :put, :id => 'form' }) do |f| %>
         <%= render "devise/shared/error_messages", resource: current_user %>
+        <%= f.label :cover_img, :class => "uploader"%>
         <%= f.file_field :cover_img, direct_upload: true, :accept => "image/*" %>
       <% end %>
       <a href="" id="uploader">
