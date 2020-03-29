@@ -10,11 +10,11 @@
 
     <%else%>
       <div class="grid-layouts">
-        <header>
+        <header class="top-bar">
           <%= render 'layouts/user_log'%>
         </header>
-        <menu>menu</menu>
-        <main><%= yield %>main</main>
+        <menu class="left-menu">menu</menu>
+        <main class="main-content"><%= yield %>main</main>
       </div>
     <% end %>
   </body>

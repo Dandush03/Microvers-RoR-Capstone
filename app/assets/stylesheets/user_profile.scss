@@ -14,9 +14,10 @@ $font-size: 1em;
     height: 100%;
     margin: 0;
     padding: 0;
+    position: relative;
 
     &>form {
-      display: none;
+      //display: none;
     }
 
     &>a {
@@ -56,13 +57,20 @@ $font-size: 1em;
     margin: 0;
     padding: 0;
     position: relative;
-
-    &>img {
-      width: 100%;
-      height: auto;
-      padding-bottom: 100%;
+  }
+  figure div {
+    content: "";
       position: absolute;
-    }
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: image-url('upload.svg');
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      opacity: 0.5;
+      z-index: 10;
   }
 }
 

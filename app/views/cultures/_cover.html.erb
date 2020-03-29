@@ -6,7 +6,11 @@
         <%= f.file_field :cover_img, direct_upload: true, :accept => "image/*" %>
       <% end %>
       <a href="" id="uploader">
-        <img src="<%= url_for(current_user.cover_img) if @user.cover_img.attached? %>">
+        <%if @user.cover_img.attached? %>
+          <%= image_tag(url_for(@user.cover_img))%>
+        <%else%>
+          <%= content_tag :div unless @user.cover_img.attached? %>
+        <% end %>
       </a>
     </figure>
   </section>
@@ -14,8 +18,8 @@
 <% else %>
   <section class="cover">
     <figure class="viewer-cover">
-      <img src="<%= url_for(@user.cover_img) if @user.cover_img.attached? %>">
-      <%= image_tag("cover-img.png") unless @user.cover_img.attached? %>
+      <%= image_tag(url_for(@user.cover_img)) if @user.cover_img.attached? %>
+      <%= content_tag :div unless @user.cover_img.attached? %>
     </figure>
   </section>
 <% end %>

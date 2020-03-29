@@ -79,17 +79,17 @@ body {
     background-color: red;
   }
 
-  menu {
+  menu.left-menu {
     grid-area: menu;
     background-color: burlywood;
   }
 
-  header {
+  header.top-bar {
     grid-area: header;
     background-color: wheat;
   }
 
-  main {
+  main.main-content {
     grid-area: main;
     background-color: violet;
   }
