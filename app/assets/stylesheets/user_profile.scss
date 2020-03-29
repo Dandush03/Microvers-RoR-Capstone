@@ -1,35 +1,46 @@
 $pad-width: 768px;
+$buttons-color: rgba(122, 122, 122, 0.685);
 $space: 5px;
 $font-size: 1em;
+$p-100: 100%;
+
+.user-show{
+  display: flex;
+  flex-direction: column;
+}
 
 .cover {
   grid-area: wrapper;
   display: flex;
   overflow: hidden;
-  width: 100%;
-  height: 100%;
-
-  &>figure.self-cover {
-    width: 100%;
-    height: 100%;
+  width: $p-100;
+  height: $space*59;
+  order: 1;
+  &>figure{
+    width: $p-100;
+    height: $p-100;
     margin: 0;
     padding: 0;
     position: relative;
+  }
+
+  &>figure.self-cover {
+    
 
     &>form {
 
       //display: none;
       input[type="file"] {
         display: none;
-        height: 100%;
+        height: $p-100;
       }
 
       .uploader {
         position: absolute;
         color: transparent;
-        z-index: 10;
-        width: 100%;
-        height: 100%;
+        z-index: 2;
+        width: $p-100;
+        height: $p-100;
         background-color: transparent;
 
         &:hover::before {
@@ -37,43 +48,44 @@ $font-size: 1em;
           position: absolute;
           top: 0;
           left: 0;
-          width: 100%;
-          height: 100%;
+          width: $p-100;
+          height: $p-100;
           background: image-url('upload.svg');
           background-position: center;
           background-repeat: no-repeat;
           background-size: cover;
           opacity: 0.5;
-          z-index: 10;
+          z-index: 1;
           cursor: pointer;
         }
       }
     }
 
     &>a {
-      width: 100%;
-      height: 100%;
+      width: $p-100;
+      height: $p-100;
       position: relative;
       display: block;
 
-
-
-
       &>img {
-        width: 100%;
-        height: auto;
-        padding-bottom: 100%;
+        width: $p-100;
+        height: $p-100;;
         position: absolute;
       }
     }
   }
 
   &>figure.viewer-cover {
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    position: relative;
+    width: $p-100;
+      height: $p-100;
+      position: relative;
+      display: block;
+
+    &>img {
+      width: $p-100;
+      height: $p-100;;
+      position: absolute;
+    }
   }
 
   figure div {
@@ -81,14 +93,163 @@ $font-size: 1em;
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
+    width: $p-100;
+    height: $p-100;
     background: image-url('upload.svg');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     opacity: 0.5;
-    z-index: 10;
+    z-index: 1;
+  }
+}
+
+.profile{
+  order: 2;
+  border-left: solid $space/3 $buttons-color;
+  display: flex;
+  flex-direction: column;
+  .profile-data{
+    .profile-btns{
+      height: $space*35;
+      justify-content: center;
+      display: flex;
+      flex-wrap: wrap-reverse;
+      &>div{
+        display: flex;
+        justify-content: center;
+        height: $space*28;
+        align-self: baseline;
+        .fallow-btn{
+          display: flex;
+          justify-content: center;
+          align-self: center;
+          margin: $space*2;
+          border: solid $buttons-color $space/5;
+          border-radius: $p-100*2;
+          width: $space*10;
+          height: $space*10;
+          i{
+            align-self: center;
+          }
+          path{
+            fill: $buttons-color;
+          }
+        }
+        .profile-img {
+          grid-area: wrapper;
+          display: flex;
+          overflow: hidden;
+          justify-content: center;
+          &>figure{
+            align-self: center;
+            width: $space*28;
+            height: $space*28;
+            border: solid $space/5 transparent;
+            border-radius: $p-100/2;
+            margin: 0;
+            padding: 0;
+            position: relative;
+            overflow: hidden;
+          }
+      
+          &>figure.self-profile {
+             
+            &>form {
+        
+              input[type="file"] {
+                display: none;
+                height: $p-100;
+              }
+        
+              .uploader {
+                position: absolute;
+                color: transparent;
+                z-index: 2;
+                width: $p-100;
+                height: $p-100;
+                background-color: transparent;
+        
+                &:hover::before {
+                  content: "";
+                  position: absolute;
+                  top: 0;
+                  left: 0;
+                  width: $p-100;
+                  height: $p-100;
+                  background: image-url('upload.svg');
+                  background-position: center;
+                  background-repeat: no-repeat;
+                  background-size: cover;
+                  opacity: 0.5;
+                  z-index: 1;
+                  cursor: pointer;
+                }
+              }
+            }
+        
+            &>a {
+              width: $p-100;
+              height: $p-100;
+              position: relative;
+              display: block;
+              
+              &>img {
+                width: $p-100;
+                height: $p-100;
+                position: absolute;
+              }
+            }
+          }
+
+          &>figure.viewer-profile {
+            
+              &>img {
+                width: $p-100;
+                height: $p-100;
+              }
+            
+          }
+        
+          figure div {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: $p-100;
+            width: $p-100;
+            background: image-url('upload.svg');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-color: white;
+            opacity: 0.5;
+            z-index: 1;
+          }
+        }
+      }
+    }
+    .profile-info{
+      text-align: center;
+      padding: $space;
+      &>p{
+        margin-bottom: 0;
+      }
+      &>span{
+        color: $buttons-color*.5;
+      }
+    }
+  }
+  .fallowers-data{
+    display: flex;
+    flex-direction: row;
+    &>div{
+      width: $p-100/3;
+      display: flex;
+      justify-content: center;
+      padding: $space*3.5;
+      border: solid $buttons-color*1.8 $space/5;
+      
+    }
   }
 }
 
@@ -97,11 +258,11 @@ $font-size: 1em;
   .user-show {
     display: grid;
     grid-template-columns: 2fr 1fr 1fr;
-    grid-template-rows: $space*60 calc(100% - #{$space*60});
+    grid-template-rows: $space*60 calc(#{$p-100} - #{$space*60});
     grid-template-areas: 'cover cover profile'
       'content content profile';
     min-height: 100vh;
-    background-color: red;
+    background-color: whitesmoke;
   }
 
   .profile {

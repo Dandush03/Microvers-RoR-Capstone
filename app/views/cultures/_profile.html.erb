@@ -1,0 +1,41 @@
+<div class="profile-data">
+  <div class="profile-btns">
+    <div>
+      <div class="fallow-btn"><i class="fas fa-plus"></i></div>
+      <!--<i class="fas fa-minus"></i>-->
+      <div class="profile-img">
+        <% if @user.id == current_user.id %>
+          <figure class="self-profile">
+            <%= form_for(current_user, url: registration_path(current_user), html: { method: :put, :id => 'form' }) do |f| %>
+              <%= f.label :profile_img, :class => "uploader"%>
+              <%= f.file_field :profile_img, direct_upload: true, :accept => "image/*", :onchange => "OnFileChange(this)" %>
+            <% end %>
+            <a href="">
+              <%if @user.profile_img.attached? %>
+                <%= image_tag(url_for(@user.profile_img))%>
+              <%else%>
+                <%= content_tag :div unless @user.profile_img.attached? %>
+              <% end %>
+            </a>
+          </figure>
+          <%= render 'script'%>
+        <% else %>
+          <figure class="viewer-profile">
+            <%= image_tag(url_for(@user.profile_img)) if @user.profile_img.attached? %>
+            <%= content_tag :div unless @user.profile_img.attached? %>
+          </figure>
+        <% end %>
+      </div>
+      <div class="fallow-btn"><i class="fas fa-align-justify"></i></div>
+    </div>
+  </div>
+  <div class="profile-info">
+    <p><%=@user.full_name%></p>
+    <span><%="@#{@user.username}"%></span>
+  </div>
+</div>
+<div class="fallowers-data">
+  <div class="cntr-tweet">tweet</div>
+  <div class="cntr-fallowing">fallow</div>
+  <div class="cntr-fallowed">fallowd</div>
+</div>
