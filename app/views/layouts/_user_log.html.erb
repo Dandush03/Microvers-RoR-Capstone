@@ -1,7 +1,7 @@
 
+<i class="fab fa-twitter"></i>
 <nav class="navbar-user">
 <% if user_signed_in? %>
-  <span>Logged in as <strong><%= current_user.username %></strong><span>
   <%= link_to 'Edit profile', edit_user_registration_path, :class => 'link' %>
   <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'link' %>
 <% else %>
