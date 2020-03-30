@@ -1,0 +1,15 @@
+This is Tweet section
+<%= form_for @culture, url: {action: "create"} do |f| %>
+  <div class="field">
+    <%= f.label "#{:text}: " %>
+    <%= f.text_field :text, autofocus: true, autocomplete: "text" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Sign up" %>
+  </div>
+<% end %>
+
+<% users.each do |tweet|  %>
+  <p><%=tweet.text%></p>
+<% end %>

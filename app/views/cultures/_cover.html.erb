@@ -1,21 +1,21 @@
 <% if @user.id == current_user.id %>
-    <figure class="self-cover">
-      <%= form_for(current_user, url: registration_path(current_user), html: { method: :put, :id => 'form' }) do |f| %>
-        <%= f.label :cover_img, :class => "uploader"%>
-        <%= f.file_field :cover_img, direct_upload: true, :accept => "image/*", :onchange => "OnFileChange(this)" %>
+  <figure class="self-cover">
+    <%= form_for(current_user, url: registration_path(current_user), html: { method: :put, :id => 'form' }) do |f| %>
+      <%= f.label :cover_img, :class => "uploader"%>
+      <%= f.file_field :cover_img, direct_upload: true, :accept => "image/*", :onchange => "OnFileChange(this)" %>
+    <% end %>
+    <a href="">
+      <%if @user.cover_img.attached? %>
+        <%= image_tag(url_for(@user.cover_img))%>
+      <%else%>
+        <%= content_tag :div unless @user.cover_img.attached? %>
       <% end %>
-      <a href="">
-        <%if @user.cover_img.attached? %>
-          <%= image_tag(url_for(@user.cover_img))%>
-        <%else%>
-          <%= content_tag :div unless @user.cover_img.attached? %>
-        <% end %>
-      </a>
-    </figure>
+    </a>
+  </figure>
   <%= render 'script'%>
 <% else %>
-    <figure class="viewer-cover">
-      <%= image_tag(url_for(@user.cover_img)) if @user.cover_img.attached? %>
-      <%= content_tag :div unless @user.cover_img.attached? %>
-    </figure>
+  <figure class="viewer-cover">
+    <%= image_tag(url_for(@user.cover_img)) if @user.cover_img.attached? %>
+    <%= content_tag :div unless @user.cover_img.attached? %>
+  </figure>
 <% end %>
