@@ -1,0 +1,13 @@
+<section class="user-menu">
+	<nav>
+		<%= link_to 'tweets', url_for( :id => @user.id, :test => 1) %>
+		<%= link_to 'fallowings', url_for( :id => @user.id, :test => nil) %>
+		<%= link_to 'fallowers', url_for( :id => @user.id, :test => nil) %>
+	</nav>
+</section>
+<section class="user-menu">
+	<div id="content">
+		<%= @partial unless @partial.nil?%>
+		<%= render @partial, :users => @followed_by %>
+	</div>
+</section>
