@@ -2,16 +2,16 @@
   <div class="profile-btns">
     <div>
       <div class="follow-btn">
-				<% if is_followed?(@user.id) %>
-					<%= button_to send('followings_path', :id => @user.id), method: 'post', :data => { :disable_with => "" }, disabled: current_user == @user do %>
-						<i class="fas fa-plus"></i>
-					<% end %>
-				<% else %>
-					<%= button_to send('following_path',:friend => @user.id), method: 'delete', :data => { :disable_with => "" } do %>
-						<i class="fas fa-minus"></i>
-					<% end %>
-				<% end %>
-			</div>
+        <% if is_followed?(@user.id) %>
+          <%= button_to send('followings_path', :id => @user.id), method: 'post', :data => { :disable_with => "" }, disabled: current_user == @user do %>
+            <i class="fas fa-plus"></i>
+          <% end %>
+        <% else %>
+          <%= button_to send('following_path',:friend => @user.id), method: 'delete', :data => { :disable_with => "" } do %>
+            <i class="fas fa-minus"></i>
+          <% end %>
+        <% end %>
+      </div>
       <div class="profile-img">
         <% if @user.id == current_user.id %>
           <figure class="self-profile">
@@ -54,3 +54,34 @@
     <span>Followers</span>
   </div>
 </div>
+<% @fallowed_by.each do |user| %>
+<div class="fallowers">
+    <div class="profile-img">
+      <figure>
+        <a>
+          <%= image_tag(url_for(user.profile_img)) if user.profile_img.attached? %>
+          <%= content_tag :div unless user.profile_img.attached? %>
+        </a>
+      </figure>
+    </div>
+    <div class="profile-info">
+      <p><%=user.full_name%></p>
+      <span><%="@#{user.username}"%></span>
+    </div>
+    <% unless current_user == user %>
+    <div class=profile-btns>
+
+      <% if is_followed?(user.id) %>
+          <%= button_to send('followings_path', :id => user.id), method: 'post', :data => { :disable_with => "" } do %>
+            <i class="fas fa-plus"></i>
+          <% end %>
+        <% else %>
+          <%= button_to send('following_path',:friend => user.id), method: 'delete', :data => { :disable_with => "" } do %>
+            <i class="fas fa-minus"></i>
+          <% end %>
+        <% end %>
+    </div>
+
+    <% end %>
+</div>
+  <% end %>

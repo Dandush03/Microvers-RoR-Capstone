@@ -4,7 +4,7 @@ $space: 5px;
 $font-size: 1em;
 $p-100: 100%;
 
-.user-show{
+.user-show {
   display: flex;
   flex-direction: column;
 }
@@ -16,7 +16,8 @@ $p-100: 100%;
   width: $p-100;
   height: $space*59;
   order: 1;
-  &>figure{
+
+  &>figure {
     width: $p-100;
     height: $p-100;
     margin: 0;
@@ -25,7 +26,7 @@ $p-100: 100%;
   }
 
   &>figure.self-cover {
-    
+
 
     &>form {
 
@@ -69,7 +70,8 @@ $p-100: 100%;
 
       &>img {
         width: $p-100;
-        height: $p-100;;
+        height: $p-100;
+        ;
         position: absolute;
       }
     }
@@ -77,13 +79,14 @@ $p-100: 100%;
 
   &>figure.viewer-cover {
     width: $p-100;
-      height: $p-100;
-      position: relative;
-      display: block;
+    height: $p-100;
+    position: relative;
+    display: block;
 
     &>img {
       width: $p-100;
-      height: $p-100;;
+      height: $p-100;
+      ;
       position: absolute;
     }
   }
@@ -104,23 +107,26 @@ $p-100: 100%;
   }
 }
 
-.profile{
+.profile {
   order: 2;
   border-left: solid $space/3 $buttons-color;
   display: flex;
   flex-direction: column;
-  .profile-data{
-    .profile-btns{
+
+  .profile-data {
+    .profile-btns {
       height: $space*35;
       justify-content: center;
       display: flex;
       flex-wrap: wrap-reverse;
-      &>div{
+
+      &>div {
         display: flex;
         justify-content: center;
         height: $space*28;
         align-self: baseline;
-        .follow-btn{
+
+        .follow-btn {
           display: flex;
           justify-content: center;
           align-self: center;
@@ -129,27 +135,33 @@ $p-100: 100%;
           border-radius: $p-100*2;
           width: $space*10;
           height: $space*10;
-          i{
+
+          i {
             align-self: center;
           }
-          form{
+
+          form {
             display: flex;
-            button{
+
+            button {
               align-self: center;
               background-color: transparent;
               border: none;
             }
           }
-          path{
+
+          path {
             fill: $buttons-color;
           }
         }
+
         .profile-img {
           grid-area: wrapper;
           display: flex;
           overflow: hidden;
           justify-content: center;
-          &>figure{
+
+          &>figure {
             align-self: center;
             width: $space*28;
             height: $space*28;
@@ -160,16 +172,16 @@ $p-100: 100%;
             position: relative;
             overflow: hidden;
           }
-      
+
           &>figure.self-profile {
-             
+
             &>form {
-        
+
               input[type="file"] {
                 display: none;
                 height: $p-100;
               }
-        
+
               .uploader {
                 position: absolute;
                 color: transparent;
@@ -177,7 +189,7 @@ $p-100: 100%;
                 width: $p-100;
                 height: $p-100;
                 background-color: transparent;
-        
+
                 &:hover::before {
                   content: "";
                   position: absolute;
@@ -195,13 +207,13 @@ $p-100: 100%;
                 }
               }
             }
-        
+
             &>a {
               width: $p-100;
               height: $p-100;
               position: relative;
               display: block;
-              
+
               &>img {
                 width: $p-100;
                 height: $p-100;
@@ -211,14 +223,14 @@ $p-100: 100%;
           }
 
           &>figure.viewer-profile {
-            
-              &>img {
-                width: $p-100;
-                height: $p-100;
-              }
-            
+
+            &>img {
+              width: $p-100;
+              height: $p-100;
+            }
+
           }
-        
+
           figure div {
             content: "";
             position: absolute;
@@ -236,21 +248,26 @@ $p-100: 100%;
         }
       }
     }
-    .profile-info{
+
+    .profile-info {
       text-align: center;
       padding: $space;
-      &>p{
+
+      &>p {
         margin-bottom: 0;
       }
-      &>span{
+
+      &>span {
         color: $buttons-color*.5;
       }
     }
   }
-  .followers-data{
+
+  .followers-data {
     display: flex;
     flex-direction: row;
-    &>div{
+
+    &>div {
       width: $p-100/3;
       display: flex;
       justify-content: center;
@@ -258,16 +275,83 @@ $p-100: 100%;
       border: solid $buttons-color*1.8 $space/5;
       flex-direction: column;
       text-align: center;
-      p{
+
+      p {
         margin: 0;
         font-weight: bold;
         text-transform: uppercase;
       }
-      span{
+
+      span {
         color: $buttons-color*1;
       }
     }
   }
+}
+
+.fallowers {
+  display: flex;
+
+  figure {
+    justify-self: center;
+    position: relative;
+    border: solid $space/5 transparent;
+    margin: $space*2;
+    border-radius: $p-100/2;
+    height: $space*15;
+    width: $space*15;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .profile-info{
+    align-self: center;
+    flex: 0 0 $space*40;
+    p {
+      margin: 0;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+  
+    span {
+      color: $buttons-color*1;
+    }
+  }
+
+  .profile-btns {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    margin: $space*2;
+    border: solid $buttons-color $space/2;
+    border-radius: $p-100*2;
+    width: $space*5;
+    height: $space*5;
+
+    i {
+      align-self: center;
+    }
+
+    form {
+      display: flex;
+
+      button {
+        align-self: center;
+        background-color: transparent;
+        border: none;
+      }
+    }
+
+    path {
+      fill: $buttons-color;
+    }
+  }
+
+
 }
 
 
