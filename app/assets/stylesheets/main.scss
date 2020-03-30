@@ -4,6 +4,8 @@
 $pad-width: 768px;
 $space: 5px;
 $font-size: 1em;
+$header-color: rgba(80, 164, 226, 1);
+$menu-color: rgba(36, 49, 71, 1);
 $body-color: linear-gradient(170deg, rgb(106, 175, 208), rgb(100, 129, 129));
 $link-btn-color: rgba(36, 49, 71, 0.7);
 $link-color: white;
@@ -22,6 +24,10 @@ body {
   margin: 0;
   padding: 0;
   min-height: 100%;
+}
+
+button {
+  cursor: pointer;
 }
 
 .navbar-user {
@@ -66,6 +72,14 @@ body {
   }
 }
 
+header.top-bar {
+  background-color: $header-color;
+}
+
+menu.left-menu {
+  background-color: $menu-color;
+  margin: 0;
+}
 
 
 @media only screen and (min-width: $pad-width) {
@@ -81,12 +95,10 @@ body {
 
   menu.left-menu {
     grid-area: menu;
-    background-color: burlywood;
   }
 
   header.top-bar {
     grid-area: header;
-    background-color: wheat;
   }
 
   main.main-content {

@@ -308,15 +308,16 @@ $p-100: 100%;
     }
   }
 
-  .profile-info{
+  .profile-info {
     align-self: center;
     flex: 0 0 $space*30;
+
     p {
       margin: 0;
       font-weight: bold;
       text-transform: uppercase;
     }
-  
+
     span {
       color: $buttons-color*1;
     }
@@ -352,16 +353,17 @@ $p-100: 100%;
   }
 }
 
-.content{
-  &>.user-menu{
-    &>nav{
+.content {
+  &>.user-menu {
+    &>nav {
       display: flex;
-    justify-content: flex-start;
-    flex-direction: row;
-    overflow: hidden;
-    height: $space*10.4;
-    align-content: center;
-    border-bottom: $space/5 solid $buttons-color*1.5;
+      justify-content: flex-start;
+      flex-direction: row;
+      overflow: hidden;
+      height: $space*10.4;
+      align-content: center;
+      border-bottom: $space/5 solid $buttons-color*1.5;
+
       a {
         align-self: center;
         padding: $space*3 $space*4;
@@ -369,69 +371,117 @@ $p-100: 100%;
         text-decoration: none;
         color: $buttons-color*.5;
       }
-      .active{
+
+      .active {
         border-bottom: $space/3 solid blue;
       }
     }
   }
-  .user-menu-info{
-    form{
+
+  .user-menu-info {
+    &>div {
+      &>.users {
+        margin: $space*6;
+        padding-left: $space*3;
+        background-color: white;
+        border: solid $space/5 $buttons-color*1.5;
+        border-radius: $space;
+
+        .profile-img {
+          order: 2;
+          padding-left: 0;
+        }
+
+        .profile-info {
+          order: 3;
+        }
+
+        .profile-btns {
+          order: 1;
+        }
+
+        form {
+          margin: 0;
+          border: none;
+          background: transparent;
+
+          button {
+            padding-top: $space/2;
+          }
+        }
+      }
+    }
+
+    form {
       display: flex;
       flex-direction: column;
       background-color: white;
       margin: $space*6;
       border: solid $space/5 $buttons-color*1.5;
       border-radius: $space;
-      &>div{
+
+      &>div {
         display: flex;
         flex-direction: column;
         padding: $space*5;
-        &>input[type=text]{
+
+        &>input[type=text] {
           border: solid $space/5 $buttons-color*1.5;
           border-radius: $space;
           height: $space*8;
           padding-left: $space*2;
           font-size: $p-100*1.2;
         }
-        label{
+
+        label {
           text-transform: uppercase;
           padding: $space 0;
           color: $buttons-color;
         }
       }
     }
-    .tweets{
+
+    .tweets {
       margin: $space*3 $space*6;
       background-color: white;
       border: solid $space/5 $buttons-color*1.5;
       border-radius: $space;
       overflow: hidden;
 
-      h4{
+      h4 {
         margin: $space*5;
         padding-bottom: $space*5;
         border-bottom: solid $space/5 $buttons-color*1.5;
-        &>:first-child{
+
+        &>:first-child {
           color: blue;
         }
       }
-      .profile-img{
-        padding: 0 $space*5;
-        display: flex;
-        flex-wrap: nowrap;
-        width: $p-100;
-        figure{
-          border-radius: 0;
-        }
-        .profile-info{
-          flex: 0 0 80%;
-          p{
-            text-transform: capitalize;
-            width: 100%;
-          }
-        }
+
+    }
+
+    .profile-img {
+      padding: 0 $space*5;
+      display: flex;
+      flex-wrap: nowrap;
+
+      figure {
+        border-radius: 0;
       }
-      
+    }
+
+    .profile-info {
+      width: $p-100;
+      flex: auto;
+
+      p {
+        text-transform: capitalize;
+        width: $p-100;
+      }
+
+      span {
+        width: $p-100;
+      }
     }
   }
 }
@@ -447,11 +497,13 @@ $p-100: 100%;
     min-height: 100vh;
     background-color: whitesmoke;
   }
-  &>input[type=text]{
+
+  &>input[type=text] {
     border: solid $space/5 $buttons-color*1.5;
     border-radius: $space;
     height: 2em;
   }
+
   .profile {
     grid-area: profile;
   }

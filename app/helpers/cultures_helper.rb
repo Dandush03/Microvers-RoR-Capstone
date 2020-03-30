@@ -15,4 +15,8 @@ module CulturesHelper
   def get_user_by_id(id)
     User.find(id)
   end
+
+  def tweets_counter(user)
+    user.cultures.count
+  end
 end
