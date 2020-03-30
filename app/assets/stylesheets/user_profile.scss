@@ -109,7 +109,7 @@ $p-100: 100%;
 
 .profile {
   order: 2;
-  border-left: solid $space/3 $buttons-color;
+  border-left: solid $space/3 $buttons-color*1.5;
   display: flex;
   flex-direction: column;
 
@@ -310,7 +310,7 @@ $p-100: 100%;
 
   .profile-info{
     align-self: center;
-    flex: 0 0 $space*40;
+    flex: 0 0 $space*30;
     p {
       margin: 0;
       font-weight: bold;
@@ -354,7 +354,85 @@ $p-100: 100%;
 
 .content{
   &>.user-menu{
-    background-color: red;
+    &>nav{
+      display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+    overflow: hidden;
+    height: $space*10.4;
+    align-content: center;
+    border-bottom: $space/5 solid $buttons-color*1.5;
+      a {
+        align-self: center;
+        padding: $space*3 $space*4;
+        text-transform: capitalize;
+        text-decoration: none;
+        color: $buttons-color*.5;
+      }
+      .active{
+        border-bottom: $space/3 solid blue;
+      }
+    }
+  }
+  .user-menu-info{
+    form{
+      display: flex;
+      flex-direction: column;
+      background-color: white;
+      margin: $space*6;
+      border: solid $space/5 $buttons-color*1.5;
+      border-radius: $space;
+      &>div{
+        display: flex;
+        flex-direction: column;
+        padding: $space*5;
+        &>input[type=text]{
+          border: solid $space/5 $buttons-color*1.5;
+          border-radius: $space;
+          height: $space*8;
+          padding-left: $space*2;
+          font-size: $p-100*1.2;
+        }
+        label{
+          text-transform: uppercase;
+          padding: $space 0;
+          color: $buttons-color;
+        }
+      }
+    }
+    .tweets{
+      margin: $space*3 $space*6;
+      background-color: white;
+      border: solid $space/5 $buttons-color*1.5;
+      border-radius: $space;
+      overflow: hidden;
+
+      h4{
+        margin: $space*5;
+        padding-bottom: $space*5;
+        border-bottom: solid $space/5 $buttons-color*1.5;
+        &>:first-child{
+          color: blue;
+        }
+      }
+      .profile-img{
+        padding: 0 $space*5;
+        display: flex;
+        flex-wrap: nowrap;
+        width: $p-100;
+        figure{
+          border-radius: 0;
+        }
+        .profile-info{
+          flex: 0 0 80%;
+          p{
+            text-transform: capitalize;
+            width: 100%;
+          }
+        }
+      }
+      
+    }
   }
 }
 
@@ -363,13 +441,17 @@ $p-100: 100%;
   .user-show {
     display: grid;
     grid-template-columns: 2fr 1fr 1fr;
-    grid-template-rows: $space*60 calc(#{$p-100} - #{$space*60});
+    grid-template-rows: $space*58.8 calc(#{$p-100} - #{$space*58.8});
     grid-template-areas: 'cover cover profile'
       'content content profile';
     min-height: 100vh;
     background-color: whitesmoke;
   }
-
+  &>input[type=text]{
+    border: solid $space/5 $buttons-color*1.5;
+    border-radius: $space;
+    height: 2em;
+  }
   .profile {
     grid-area: profile;
   }

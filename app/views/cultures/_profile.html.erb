@@ -2,7 +2,7 @@
   <div class="profile-btns">
     <div>
       <div class="follow-btn">
-        <% if is_followed?(@user.id) %>
+        <% if followed?(@user.id) %>
           <%= button_to send('followings_path', :id => @user.id), method: 'post', :data => { :disable_with => "" }, disabled: current_user == @user do %>
             <i class="fas fa-plus"></i>
           <% end %>

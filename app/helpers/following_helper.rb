@@ -1,5 +1,5 @@
 module FollowingHelper
-  def is_followed?(id)
+  def followed?(id)
     current_user.followers.find_by(followed_id: id).nil?
   end
 

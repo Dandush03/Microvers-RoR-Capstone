@@ -1,5 +1,4 @@
 class CulturesController < ApplicationController
-  
   def index
     @users = User.all
   end
@@ -13,9 +12,7 @@ class CulturesController < ApplicationController
     @culture = Culture.new
   end
 
-  def new
-
-  end
+  def new; end
 
   def create
     current_user.cultures.create(form_parms)
@@ -25,7 +22,7 @@ class CulturesController < ApplicationController
   def update; end
 
   def delete; end
-  
+
   private
 
   def sub_menu(id = nil)
@@ -33,7 +30,7 @@ class CulturesController < ApplicationController
     when nil then 'tweets'
     else 'user_list'
     end
-	end
+  end
 end
 
 private
