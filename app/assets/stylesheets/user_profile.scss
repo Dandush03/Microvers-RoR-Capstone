@@ -120,17 +120,25 @@ $p-100: 100%;
         justify-content: center;
         height: $space*28;
         align-self: baseline;
-        .fallow-btn{
+        .follow-btn{
           display: flex;
           justify-content: center;
           align-self: center;
           margin: $space*2;
-          border: solid $buttons-color $space/5;
+          border: solid $buttons-color $space/2;
           border-radius: $p-100*2;
           width: $space*10;
           height: $space*10;
           i{
             align-self: center;
+          }
+          form{
+            display: flex;
+            button{
+              align-self: center;
+              background-color: transparent;
+              border: none;
+            }
           }
           path{
             fill: $buttons-color;
@@ -239,16 +247,25 @@ $p-100: 100%;
       }
     }
   }
-  .fallowers-data{
+  .followers-data{
     display: flex;
     flex-direction: row;
     &>div{
       width: $p-100/3;
       display: flex;
       justify-content: center;
-      padding: $space*3.5;
+      padding: $space*1.5;
       border: solid $buttons-color*1.8 $space/5;
-      
+      flex-direction: column;
+      text-align: center;
+      p{
+        margin: 0;
+        font-weight: bold;
+        text-transform: uppercase;
+      }
+      span{
+        color: $buttons-color*1;
+      }
     }
   }
 }
