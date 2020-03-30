@@ -13,7 +13,9 @@
         <header class="top-bar">
           <%= render 'layouts/user_log'%>
         </header>
-        <menu class="left-menu"></menu>
+        <menu class="left-menu">
+          <%= render 'layouts/nav'%>
+        </menu>
         <main class="main-content"><%= yield %></main>
       </div>
     <% end %>

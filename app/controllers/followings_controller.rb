@@ -5,7 +5,7 @@ class FollowingsController < ApplicationController
   end
 
   def destroy
-    current_user.followers.find_by(followed_id: params[:id]).destroy
+    current_user.followers.find_by(followed_id: params[:friend]).destroy
     redirect_to request.referrer unless request.referrer.nil?
   end
 end
