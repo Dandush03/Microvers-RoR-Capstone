@@ -44,7 +44,10 @@
   </div>
 </div>
 <div class="followers-data">
-  <div class="cntr-tweet">Tweets</div>
+  <div class="cntr-tweet">
+    <p><%= tweets_counter(@user) %></p>
+    <span>Tweets</span>
+  </div>
   <div class="cntr-following">
     <p><%= followeds_counter(@user) %></p>
     <span>Followings</span>

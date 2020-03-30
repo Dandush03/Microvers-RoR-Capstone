@@ -6,9 +6,9 @@
 <% end %>
 
 <div class="tweets">
-<h4><span>ALL TWEETS / </span><span>NO REPLIES</span></h4>
-<% users.each do |tweet|  %>
-  <% user = get_user_by_id(tweet.user_id)%>
+  <h4><span>ALL TWEETS / </span><span>NO REPLIES</span></h4>
+  <% users.each do |tweet|  %>
+    <% user = get_user_by_id(tweet.user_id)%>
     <div class="followers">
       <div class="profile-img">
         <figure>
@@ -17,13 +17,13 @@
             <%= content_tag :div unless user.profile_img.attached? %>
           <% end %>
         </figure>
-        <div class="profile-info">
-          <p><%="#{user.full_name}"%></p>
-          <span><%=tweet.text%></span>
-        </div>
       </div>
-  </div>
-<% end %>
+      <div class="profile-info">
+        <p><%="#{user.full_name}"%></p>
+        <span><%=tweet.text%></span>
+      </div>
+    </div>
+  <% end %>
 </div>
 
 
