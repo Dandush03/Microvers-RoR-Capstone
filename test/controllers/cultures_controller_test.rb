@@ -7,28 +7,20 @@ class CulturesControllerTest < ActionDispatch::IntegrationTest
     post user_session_url
   end
 
-  # test "should get index" do
-  #   get cultures_index_url
-  #   assert_response :success
-  # end
+  test "should get index" do
+    get root_path
+    assert_response :success
+  end
 
-  # test "should get new" do
-  #   get cultures_new_url
-  #   assert_response :success
-  # end
+  test "should get new" do
+    user = users(:user_001)
+    get culture_path(user)
+    assert_response :success
+  end
 
-  # test "should get create" do
-  #   get cultures_create_url
-  #   assert_response :success
-  # end
-
-  # test "should get update" do
-  #   get cultures_update_url
-  #   assert_response :success
-  # end
-
-  # test "should get delete" do
-  #   get cultures_delete_url
-  #   assert_response :success
-  # end
+  test "should get create" do
+    text = "this is a sample test"
+    post cultures_path, params: { culture: { text: text } }
+    assert_response :success
+  end
 end

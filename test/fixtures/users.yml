@@ -2,22 +2,22 @@ user_001:
   id: 1
   username: 'test1'
   email: test1@test.com
-  fullname: 'test 1'
+  full_name: 'test 1'
   encrypted_password: <%= User.new.send(:password_digest, '123456') %>
   remember_created_at: <%= Time.now %>
 
 user_002:
   id: 2
   username: 'test2'
-  email: test1@test.com
-  fullname: 'test 2'
+  email: test2@test.com
+  full_name: 'test 2'
   encrypted_password: <%= User.new.send(:password_digest, '123456') %>
   remember_created_at: <%= Time.now %>
 
 user_003:
   id: 3
   username: 'test3'
-  email: test1@test.com
-  fullname: 'test 3'
+  email: test3@test.com
+  full_name: 'test 3'
   encrypted_password: <%= User.new.send(:password_digest, '123456') %>
   remember_created_at: <%= Time.now %>
