@@ -20,18 +20,21 @@
               <%= f.file_field :profile_img, direct_upload: true, :accept => "image/*", :onchange => "OnFileChange(this)" %>
             <% end %>
             <a href="">
-              <%if @user.profile_img.attached? %>
+              <% unless @user.profile_img.attached? %>
+                <%= image_tag(url_for("user_profile.png"))%>
+              <% else %>
                 <%= image_tag(url_for(@user.profile_img))%>
-              <%else%>
-                <%= content_tag :div unless @user.profile_img.attached? %>
               <% end %>
             </a>
           </figure>
           <%= render 'script'%>
         <% else %>
           <figure class="viewer-profile">
-            <%= image_tag(url_for(@user.profile_img)) if @user.profile_img.attached? %>
-            <%= content_tag :div unless @user.profile_img.attached? %>
+            <% unless @user.profile_img.attached? %>
+              <%= image_tag(url_for("user_profile.png"))%>
+            <% else %>
+              <%= image_tag(url_for(@user.profile_img))%>
+            <% end %>
           </figure>
         <% end %>
       </div>

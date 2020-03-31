@@ -5,8 +5,11 @@
         <div class="profile-img">
           <figure>
             <%= link_to culture_path(user) do %>
-              <%= image_tag(url_for(user.profile_img)) if user.profile_img.attached? %>
-              <%= content_tag :div unless user.profile_img.attached? %>
+              <% unless user.profile_img.attached? %>
+                <%= image_tag(url_for("user_profile.png"))%>
+              <% else %>
+                <%= image_tag(url_for(user.profile_img))%>
+              <% end %>
             <% end %>
           </figure>
         </div>
