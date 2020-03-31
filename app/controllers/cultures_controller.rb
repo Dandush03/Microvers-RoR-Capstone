@@ -42,5 +42,5 @@ end
 
 def people_to_fallow
   follower_list = @user.followers.select(:followed_id)
-  User.all.where.not(id: follower_list)
+  User.all.order(:created_at).reverse_order.where.not(id: follower_list)
 end
