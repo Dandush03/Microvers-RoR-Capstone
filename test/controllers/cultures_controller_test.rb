@@ -18,7 +18,7 @@ class CulturesControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-  test "should get create" do
+  test "should post create" do
     text = "this is a sample test"
     post cultures_path, params: { culture: { text: text } }
     assert_response :success
