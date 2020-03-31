@@ -9,12 +9,12 @@ gem 'bootstrap-sass'
 gem 'cloudinary'
 gem 'devise'
 gem 'jbuilder'
+gem 'jquery-rails'
 gem 'puma'
 gem 'rails'
 gem 'sass-rails'
 gem 'turbolinks'
 gem 'webpacker'
-gem 'jquery-rails'
 
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]

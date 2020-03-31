@@ -7,16 +7,15 @@ class FallowingsControllerTest < ActionDispatch::IntegrationTest
     post user_session_url
   end
 
-	test "should post create" do
-		user = users(:user_002)
-    post followings_path, params: { followed_id: user.id } 
+  test 'should post create' do
+    user = users(:user_002)
+    post followings_path, params: { followed_id: user.id }
     assert_response :success
-	end
+  end
 
-	test "should delete" do
-		user = users(:user_002)
-    delete  following_path(user), params: { friend: user.id } 
+  test 'should delete' do
+    user = users(:user_002)
+    delete following_path(user), params: { friend: user.id }
     assert_response :success
-	end
-	
+  end
 end
