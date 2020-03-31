@@ -4,9 +4,9 @@
 ### Tweeter Like App
 ###### Microverse Ruby on Rails Capstone Project
 
+This app behave as a tweeter app that allowed user to follow and unfollow other users
+
 ---
-
-
 
 ## Table of Contents
 
