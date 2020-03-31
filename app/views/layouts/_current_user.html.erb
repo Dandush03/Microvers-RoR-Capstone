@@ -1,0 +1,19 @@
+<div class="current_user_pic">
+  <figure class="viewer-profile">
+    <%= image_tag(url_for(current_user.profile_img)) if current_user.profile_img.attached? %>
+    <%= content_tag :div unless current_user.profile_img.attached? %>
+  </figure>
+  <h4><%= current_user.full_name %></h4>
+</div>
+<div class="current_user_info">
+  <div>
+    <div class="cntr-tweet">
+      <p><%= tweets_counter(current_user) %></p>
+      <span>Tweets</span>
+    </div>
+    <div class="cntr-following">
+      <p><%= followeds_counter(current_user) %></p>
+      <span>Followings</span>
+    </div>
+  </div>
+</div>
