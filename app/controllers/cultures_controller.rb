@@ -1,6 +1,12 @@
 class CulturesController < ApplicationController
   def index
     @users = User.all
+    @culture = Culture.new
+    @user = current_user
+    @tweets = Culture.all
+    # rubocop: disable Naming/MemoizedInstanceVariableName
+    @partial ||= sub_menu(params[:menu])
+    # rubocop: enable Naming/MemoizedInstanceVariableName
   end
 
   def show
@@ -12,16 +18,10 @@ class CulturesController < ApplicationController
     @culture = Culture.new
   end
 
-  def new; end
-
   def create
     current_user.cultures.create(form_parms)
     redirect_to request.referrer unless request.referrer.nil?
   end
-
-  def update; end
-
-  def delete; end
 
   private
 

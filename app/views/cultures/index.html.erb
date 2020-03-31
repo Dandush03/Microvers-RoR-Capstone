@@ -1,16 +1,7 @@
-<h1>Cultures#index</h1>
-<p>Find me in app/views/cultures/index.html.erb</p>
-<section class="users-section">
-  <ul class="users-list">
-    <% @users.each do |user| %>
-      <% unless current_user.id == user.id %>
-        <li>
-          Name: <%= user.username %>
-        <span class="profile-link">
-          <%= link_to 'See Profile',  culture_path(user), class: 'profile-link' %>
-        </span>
-        </li>
-      <% end  %>
-    <% end %>
-  </ul>
-</section>
+<div class="index">
+  <section class="profile">
+  </section>
+  <section class="content" id="content">
+    <%= render 'users_content', :object => @tweets %>
+  </section>
+</div>

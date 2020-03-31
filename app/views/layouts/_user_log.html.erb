@@ -1,11 +1,10 @@
-
 <i class="fab fa-twitter"></i>
 <nav class="navbar-user">
-<% if user_signed_in? %>
-  <%= link_to 'Edit profile', edit_user_registration_path, :class => 'link' %>
-  <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'link' %>
-<% else %>
-  <%= link_to "Sign up", new_user_registration_path, :class => 'link' %>
-  <%= link_to "Login", new_user_session_path, :class => 'link' %>
-<% end %>
+  <% if user_signed_in? %>
+    <%= link_to 'Edit profile', edit_user_registration_path, :class => 'link' %>
+    <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'link' %>
+  <% else %>
+    <%= link_to "Sign up", new_user_registration_path, :class => 'link' %>
+    <%= link_to "Login", new_user_session_path, :class => 'link' %>
+  <% end %>
 </nav>

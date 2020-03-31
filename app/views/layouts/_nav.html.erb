@@ -1,8 +1,14 @@
 <ul>
-  <li> 
-    <%= link_to 'Home', root_path %>
+  <li>
+    <%= link_to root_path do %>
+      <i class="fas fa-home"></i>
+      <p>HOME</p>
+    <% end %>
   </li>
   <li>
-    <%= link_to 'My Profile', culture_path(current_user) %>
+    <%= link_to culture_path(current_user) do %>
+      <i class="fas fa-user-alt"></i>
+      <p>PROFILE</p>
+    <% end %>
   </li>
 </ul>

@@ -3,7 +3,11 @@
 // You can use Sass (SCSS) here: https://sass-lang.com/
 $pad-width: 768px;
 $space: 5px;
+$p-100: 100%;
 $font-size: 1em;
+$border-color: rgb(18, 26, 37);
+$profile-menu-color:rgba(29, 42, 62, 1);
+$font-menu-color: rgba(121, 142, 165, 1);
 $header-color: rgba(80, 164, 226, 1);
 $menu-color: rgba(36, 49, 71, 1);
 $body-color: linear-gradient(170deg, rgb(106, 175, 208), rgb(100, 129, 129));
@@ -13,6 +17,8 @@ $link-color: white;
 * {
   box-sizing: border-box;
 }
+
+
 
 html {
   min-height: 100%;
@@ -31,8 +37,8 @@ button {
 }
 
 .navbar-user {
+  align-self: center;
   display: flex;
-  justify-content: flex-end;
   flex-direction: row;
 
   &>:nth-child(even) {
@@ -74,13 +80,119 @@ button {
 
 header.top-bar {
   background-color: $header-color;
+  display: flex;
+  justify-content: space-between;
+
+  i {
+    align-self: center;
+    margin: $space*6;
+    transform: scale(1.5);
+
+    path {
+      fill: white;
+    }
+  }
 }
 
 menu.left-menu {
   background-color: $menu-color;
   margin: 0;
-}
+  padding: 0;
 
+  &>.current_user_pic {
+    display: flex;
+    background-color: $profile-menu-color;
+    border-bottom: $space/5 solid $border-color;
+    height: $space*15;
+
+    figure {
+      width: $space*14;
+      height: $space*14;
+      overflow: hidden;
+      margin: 0;
+      padding: $space*1;
+
+      img {
+        width: $p-100;
+        height: $p-100;
+      }
+    }
+
+    &>h4 {
+      margin-left: $space;
+      align-self: center;
+      color: $font-menu-color;
+      text-transform: uppercase;
+      font-size: $p-100*1.2;
+    }
+  }
+
+  &>.current_user_info {
+    display: flex;
+    background-color: $profile-menu-color;
+    border-bottom: $space/5 solid $border-color;
+    height: $space*15;
+
+    &>div {
+      display: flex;
+      flex: 0 0 $p-100;
+
+      &>div {
+        align-self: center;
+        flex: 0 0 $p-100/2;
+        display: flex;
+        flex-direction: column;
+
+        p,
+        span {
+          align-self: center;
+          text-align: center;
+          width: $p-100;
+          color: $font-menu-color;
+          margin: 0;
+          padding: 0;
+        }
+
+        p {
+          font-weight: bolder;
+          font-size: $p-100*1.2;
+        }
+
+      }
+
+      &>:first-child {
+        border-right: $space/5 solid $border-color;
+      }
+    }
+  }
+
+  &>ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+
+    &>li {
+      display: flex;
+      flex-direction: row;
+
+      &>a {
+        display: flex;
+        flex-direction: row;
+        color: $font-menu-color;
+        text-decoration: none;
+
+        &>:first-child {
+          align-self: center;
+          flex: 0 0 $space*5
+        }
+
+        path{
+          fill: $font-menu-color;
+        }
+      }
+    }
+  }
+}
 
 @media only screen and (min-width: $pad-width) {
   .grid-layouts {

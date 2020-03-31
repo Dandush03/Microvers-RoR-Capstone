@@ -107,6 +107,20 @@ $p-100: 100%;
   }
 }
 
+.current-follow {
+  border-bottom: $space/5 solid $buttons-color*1.5;
+  margin: $space*2;
+  padding: $space*2;
+  height: $space*8;
+  overflow: hidden;
+
+  p {
+    margin: 0;
+    text-transform: uppercase;
+    color: $buttons-color*.5;
+  }
+}
+
 .profile {
   order: 2;
   border-left: solid $space/3 $buttons-color*1.5;
@@ -353,8 +367,11 @@ $p-100: 100%;
   }
 }
 
-.content {
-  &>.user-menu {
+.main-content{
+  background-color: red;
+}
+
+  .user-menu {
     &>nav {
       display: flex;
       justify-content: flex-start;
@@ -378,110 +395,108 @@ $p-100: 100%;
     }
   }
 
-  .user-menu-info {
-    &>div {
-      &>.users {
-        margin: $space*6;
-        padding-left: $space*3;
-        background-color: white;
-        border: solid $space/5 $buttons-color*1.5;
-        border-radius: $space;
+.user-menu-info {
+  &>div {
+    &>.users {
+      margin: $space*6;
+      padding-left: $space*3;
+      background-color: white;
+      border: solid $space/5 $buttons-color*1.5;
+      border-radius: $space;
 
-        .profile-img {
-          order: 2;
-          padding-left: 0;
-        }
+      .profile-img {
+        order: 2;
+        padding-left: 0;
+      }
 
-        .profile-info {
-          order: 3;
-        }
+      .profile-info {
+        order: 3;
+      }
 
-        .profile-btns {
-          order: 1;
-        }
+      .profile-btns {
+        order: 1;
+      }
 
-        form {
-          margin: 0;
-          border: none;
-          background: transparent;
+      form {
+        margin: 0;
+        border: none;
+        background: transparent;
 
-          button {
-            padding-top: $space/2;
-          }
+        button {
+          padding-top: $space/2;
         }
       }
     }
+  }
 
-    form {
+  form {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    margin: $space*6;
+    border: solid $space/5 $buttons-color*1.5;
+    border-radius: $space;
+
+    &>div {
       display: flex;
       flex-direction: column;
-      background-color: white;
-      margin: $space*6;
-      border: solid $space/5 $buttons-color*1.5;
-      border-radius: $space;
+      padding: $space*5;
 
-      &>div {
-        display: flex;
-        flex-direction: column;
-        padding: $space*5;
-
-        &>input[type=text] {
-          border: solid $space/5 $buttons-color*1.5;
-          border-radius: $space;
-          height: $space*8;
-          padding-left: $space*2;
-          font-size: $p-100*1.2;
-        }
-
-        label {
-          text-transform: uppercase;
-          padding: $space 0;
-          color: $buttons-color;
-        }
-      }
-    }
-
-    .tweets {
-      margin: $space*3 $space*6;
-      background-color: white;
-      border: solid $space/5 $buttons-color*1.5;
-      border-radius: $space;
-      overflow: hidden;
-
-      h4 {
-        margin: $space*5;
-        padding-bottom: $space*5;
-        border-bottom: solid $space/5 $buttons-color*1.5;
-
-        &>:first-child {
-          color: blue;
-        }
+      &>input[type=text] {
+        border: solid $space/5 $buttons-color*1.5;
+        border-radius: $space;
+        height: $space*8;
+        padding-left: $space*2;
+        font-size: $p-100*1.2;
       }
 
-    }
-
-    .profile-img {
-      padding: 0 $space*5;
-      display: flex;
-      flex-wrap: nowrap;
-
-      figure {
-        border-radius: 0;
+      label {
+        text-transform: uppercase;
+        padding: $space 0;
+        color: $buttons-color;
       }
     }
+  }
 
-    .profile-info {
+  .tweets {
+    margin: $space*3 $space*6;
+    background-color: white;
+    border: solid $space/5 $buttons-color*1.5;
+    border-radius: $space;
+    overflow: hidden;
+
+    h4 {
+      margin: $space*5;
+      padding-bottom: $space*5;
+      border-bottom: solid $space/5 $buttons-color*1.5;
+
+      &>:first-child {
+        color: blue;
+      }
+    }
+  }
+
+  .profile-img {
+    padding: 0 $space*5;
+    display: flex;
+    flex-wrap: nowrap;
+
+    figure {
+      border-radius: 0;
+    }
+  }
+
+  .profile-info {
+    width: $p-100;
+    flex: auto;
+
+    p {
+      text-transform: capitalize;
       width: $p-100;
-      flex: auto;
+    }
 
-      p {
-        text-transform: capitalize;
-        width: $p-100;
-      }
-
-      span {
-        width: $p-100;
-      }
+    span {
+      width: $p-100;
     }
   }
 }
@@ -493,6 +508,16 @@ $p-100: 100%;
     grid-template-columns: 2fr 1fr 1fr;
     grid-template-rows: $space*58.8 calc(#{$p-100} - #{$space*58.8});
     grid-template-areas: 'cover cover profile'
+      'content content profile';
+    min-height: 100vh;
+    background-color: whitesmoke;
+  }
+
+  .index {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-rows: $space*58.8 calc(#{$p-100} - #{$space*58.8});
+    grid-template-areas: 'content content profile'
       'content content profile';
     min-height: 100vh;
     background-color: whitesmoke;

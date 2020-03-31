@@ -1,10 +1,10 @@
 <%= form_for @culture, url: {action: "create"} do |f| %>
   <div class="field">
-    <%= f.label "tweet to #{@user.full_name} " %>
+    <%= f.label "tweet to #{@user.full_name}" unless current_page?(root_path) %>
+    <%= f.label "tweet to something" if current_page?(root_path) %>
     <%= f.text_field :text, autofocus: true, autocomplete: "text" %>
   </div>
 <% end %>
-
 <div class="tweets">
   <h4><span>ALL TWEETS / </span><span>NO REPLIES</span></h4>
   <% users.each do |tweet|  %>
@@ -25,5 +25,3 @@
     </div>
   <% end %>
 </div>
-
-
