@@ -4,6 +4,7 @@ class CulturesController < ApplicationController
     @culture = Culture.new
     @user = current_user
     @tweets = Culture.all
+    @index = people_to_fallow
     # rubocop: disable Naming/MemoizedInstanceVariableName
     @partial ||= sub_menu(params[:menu])
     # rubocop: enable Naming/MemoizedInstanceVariableName
@@ -34,6 +35,12 @@ class CulturesController < ApplicationController
 end
 
 private
+
 def form_parms
   params.require(:culture).permit(:text)
+end
+
+def people_to_fallow
+  follower_list = @user.followers.select(:followed_id)
+  User.all.where.not(id: follower_list)
 end

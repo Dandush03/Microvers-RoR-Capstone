@@ -1,5 +1,6 @@
 <div class="index">
   <section class="profile">
+    <%= render 'user_list', :users => @index %>
   </section>
   <section class="content" id="content">
     <%= render 'users_content', :object => @tweets %>
