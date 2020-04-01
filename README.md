@@ -6,6 +6,8 @@
 
 This app behave as a tweeter app that allowed user to follow and unfollow other users
 
+![Screenshot from 2020-04-01 16-00-48](https://user-images.githubusercontent.com/51087936/78183416-dc84c980-7435-11ea-8485-b970bce70df7.png)
+
 ---
 
 ## Table of Contents
