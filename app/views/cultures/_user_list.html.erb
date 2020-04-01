@@ -1,21 +1,21 @@
 <div class="users">
   <% users.each do |user| %>
-    <% unless current_user == user && current_page?(root_path)%>
+    <% unless current_user == user && current_page?(root_path) %>
       <div class="followers">
         <div class="profile-img">
           <figure>
             <%= link_to culture_path(user) do %>
               <% unless user.profile_img.attached? %>
-                <%= image_tag(url_for("user_profile.png"))%>
+                <%= image_tag(url_for("user_profile.png")) %>
               <% else %>
-                <%= image_tag(url_for(user.profile_img))%>
+                <%= image_tag(url_for(user.profile_img)) %>
               <% end %>
             <% end %>
           </figure>
         </div>
         <div class="profile-info">
-          <p><%=user.full_name%></p>
-          <span><%="@#{user.username}"%></span>
+          <p><%= user.full_name %></p>
+          <span><%= "@#{user.username}" %></span>
         </div>
         <% unless current_user == user %>
           <div class=profile-btns>

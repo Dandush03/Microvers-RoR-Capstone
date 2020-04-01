@@ -1,24 +1,23 @@
 <!DOCTYPE html>
 <html>
-  <%= render 'layouts/head'%>
+  <%= render 'layouts/head' %>
   <body>
     <% if current_page?(user_session_path) || current_page?(new_user_registration_path) || current_user.nil? %>
       <header class="top-bar" style="background: transparent;">
-        <%= render 'layouts/user_log'%>
+        <%= render 'layouts/user_log' %>
       </header>
       <main><%= yield %></main>
-    <%else%>
+    <% else %>
       <div class="grid-layouts">
         <header class="top-bar">
-          <%= render 'layouts/user_log'%>
+          <%= render 'layouts/user_log' %>
         </header>
         <menu class="left-menu">
-          <%= render 'layouts/current_user'%>
-          <%= render 'layouts/nav'%>
+          <%= render 'layouts/current_user' %>
+          <%= render 'layouts/nav' %>
         </menu>
         <main class="main-content"><%= yield %></main>
       </div>
     <% end %>
   </body>
 </html>
-

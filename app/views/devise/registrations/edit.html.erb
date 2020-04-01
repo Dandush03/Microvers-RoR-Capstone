@@ -33,9 +33,9 @@
   <% end %>
 
   <div class="field">
-    <i>leave blank New Password if you don't want to change it</i><br />
+    <i>leave blank New Password if you don't want to change it</i><br>
     <%= f.label "New #{:password}: " %>
-    <%= f.password_field :password, autocomplete: "new-password", placeholder: 'New Password' %>   
+    <%= f.password_field :password, autocomplete: "new-password", placeholder: 'New Password' %>
   </div>
 
   <div class="field">
@@ -44,10 +44,10 @@
   </div>
 
   <div class="field">
-    <i>we need your current password to confirm your changes</i><br />
-    <%= f.label "Current #{:password}: " %> 
+    <i>we need your current password to confirm your changes</i><br>
+    <%= f.label "Current #{:password}: " %>
     <%= f.password_field :current_password, autocomplete: "current-password", placeholder: 'Current Password' %>
-    
+
   </div>
 
   <div class="actions">
