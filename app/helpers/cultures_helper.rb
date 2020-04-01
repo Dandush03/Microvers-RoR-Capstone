@@ -1,10 +1,10 @@
 module CulturesHelper
   def get_object(user, partial = nil)
     case partial
-    when 'fallowings'
+    when 'followings'
       list = user.followeds.select(:follower_id)
       User.all.where(id: list)
-    when 'fallowers'
+    when 'followers'
       list = user.followers.select(:followed_id)
       User.all.where(id: list)
     else

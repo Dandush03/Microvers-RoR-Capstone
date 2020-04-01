@@ -3,6 +3,7 @@ $buttons-color: rgba(122, 122, 122, 0.685);
 $space: 5px;
 $font-size: 1em;
 $p-100: 100%;
+$header-color: rgba(80, 164, 226, 1);
 
 .user-show {
   display: flex;
@@ -493,6 +494,19 @@ $p-100: 100%;
 
     span {
       width: $p-100;
+    }
+  }
+}
+
+.new_culture {
+  .actions {
+    input {
+      float: right;
+      margin-top: $space*4;
+      padding: $space*1.5;
+      border-radius: $space;
+      background-color: $header-color;
+      color: white;
     }
   }
 }

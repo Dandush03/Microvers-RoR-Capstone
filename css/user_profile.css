@@ -1,0 +1,618 @@
+.user-show {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.cover {
+  grid-area: wrapper;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  overflow: hidden;
+  width: 100%;
+  height: 295px;
+  -webkit-box-ordinal-group: 2;
+      -ms-flex-order: 1;
+          order: 1;
+}
+
+.cover > figure {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+.cover > figure.self-cover > form input[type="file"] {
+  display: none;
+  height: 100%;
+}
+
+.cover > figure.self-cover > form .uploader {
+  position: absolute;
+  color: transparent;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+}
+
+.cover > figure.self-cover > form .uploader:hover::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: image-url("upload.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0.5;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.cover > figure.self-cover > a {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: block;
+}
+
+.cover > figure.self-cover > a > img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+.cover > figure.viewer-cover {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: block;
+}
+
+.cover > figure.viewer-cover > img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+.cover figure div {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: image-url("upload.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0.5;
+  z-index: 1;
+}
+
+.current-follow {
+  border-bottom: 1px solid rgba(183, 183, 183, 0.685);
+  margin: 10px;
+  padding: 10px;
+  height: 40px;
+  overflow: hidden;
+}
+
+.current-follow p {
+  margin: 0;
+  text-transform: uppercase;
+  color: rgba(61, 61, 61, 0.685);
+}
+
+.profile {
+  -webkit-box-ordinal-group: 3;
+      -ms-flex-order: 2;
+          order: 2;
+  border-left: solid 1.66667px rgba(183, 183, 183, 0.685);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.profile .profile-data .profile-btns {
+  height: 175px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap-reverse;
+      flex-wrap: wrap-reverse;
+}
+
+.profile .profile-data .profile-btns > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 140px;
+  -ms-flex-item-align: baseline;
+      align-self: baseline;
+}
+
+.profile .profile-data .profile-btns > div .follow-btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-item-align: center;
+      align-self: center;
+  margin: 10px;
+  border: solid rgba(122, 122, 122, 0.685) 2.5px;
+  border-radius: 200%;
+  width: 50px;
+  height: 50px;
+}
+
+.profile .profile-data .profile-btns > div .follow-btn i {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+.profile .profile-data .profile-btns > div .follow-btn form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.profile .profile-data .profile-btns > div .follow-btn form button {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  background-color: transparent;
+  border: none;
+}
+
+.profile .profile-data .profile-btns > div .follow-btn path {
+  fill: rgba(122, 122, 122, 0.685);
+}
+
+.profile .profile-data .profile-btns > div .profile-img {
+  grid-area: wrapper;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  overflow: hidden;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.profile .profile-data .profile-btns > div .profile-img > figure {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  width: 140px;
+  height: 140px;
+  border: solid 1px transparent;
+  border-radius: 50%;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.profile .profile-data .profile-btns > div .profile-img > figure.self-profile > form input[type="file"] {
+  display: none;
+  height: 100%;
+}
+
+.profile .profile-data .profile-btns > div .profile-img > figure.self-profile > form .uploader {
+  position: absolute;
+  color: transparent;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+}
+
+.profile .profile-data .profile-btns > div .profile-img > figure.self-profile > form .uploader:hover::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: image-url("upload.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0.5;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.profile .profile-data .profile-btns > div .profile-img > figure.self-profile > a {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: block;
+}
+
+.profile .profile-data .profile-btns > div .profile-img > figure.self-profile > a > img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+.profile .profile-data .profile-btns > div .profile-img > figure.viewer-profile > img {
+  width: 100%;
+  height: 100%;
+}
+
+.profile .profile-data .profile-btns > div .profile-img figure div {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: image-url("upload.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: white;
+  opacity: 0.5;
+  z-index: 1;
+}
+
+.profile .profile-data .profile-info {
+  text-align: center;
+  padding: 5px;
+}
+
+.profile .profile-data .profile-info > p {
+  margin-bottom: 0;
+}
+
+.profile .profile-data .profile-info > span {
+  color: rgba(61, 61, 61, 0.685);
+}
+
+.profile .followers-data {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.profile .followers-data > div {
+  width: 33.33333%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 7.5px;
+  border: solid rgba(220, 220, 220, 0.685) 1px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+}
+
+.profile .followers-data > div p {
+  margin: 0;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.profile .followers-data > div span {
+  color: rgba(122, 122, 122, 0.685);
+}
+
+.followers {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.followers figure {
+  -ms-grid-column-align: center;
+      justify-self: center;
+  position: relative;
+  border: solid 1px transparent;
+  margin: 10px;
+  border-radius: 50%;
+  height: 75px;
+  width: 75px;
+  overflow: hidden;
+}
+
+.followers figure img {
+  width: 100%;
+  height: 100%;
+}
+
+.followers .profile-info {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 150px;
+          flex: 0 0 150px;
+}
+
+.followers .profile-info p {
+  margin: 0;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.followers .profile-info span {
+  color: rgba(122, 122, 122, 0.685);
+}
+
+.followers .profile-btns {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-item-align: center;
+      align-self: center;
+  margin: 10px;
+  border: solid rgba(122, 122, 122, 0.685) 2.5px;
+  border-radius: 200%;
+  width: 25px;
+  height: 25px;
+}
+
+.followers .profile-btns i {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+.followers .profile-btns form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.followers .profile-btns form button {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  background-color: transparent;
+  border: none;
+}
+
+.followers .profile-btns path {
+  fill: rgba(122, 122, 122, 0.685);
+}
+
+.user-menu > nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  overflow: hidden;
+  height: 52px;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  border-bottom: 1px solid rgba(183, 183, 183, 0.685);
+}
+
+.user-menu > nav a {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  padding: 15px 20px;
+  text-transform: capitalize;
+  text-decoration: none;
+  color: rgba(61, 61, 61, 0.685);
+}
+
+.user-menu > nav .active {
+  border-bottom: 1.66667px solid blue;
+}
+
+.user-menu-info > div > .users {
+  margin: 30px;
+  padding-left: 15px;
+  background-color: white;
+  border: solid 1px rgba(183, 183, 183, 0.685);
+  border-radius: 5px;
+}
+
+.user-menu-info > div > .users .profile-img {
+  -webkit-box-ordinal-group: 3;
+      -ms-flex-order: 2;
+          order: 2;
+  padding-left: 0;
+}
+
+.user-menu-info > div > .users .profile-info {
+  -webkit-box-ordinal-group: 4;
+      -ms-flex-order: 3;
+          order: 3;
+}
+
+.user-menu-info > div > .users .profile-btns {
+  -webkit-box-ordinal-group: 2;
+      -ms-flex-order: 1;
+          order: 1;
+}
+
+.user-menu-info > div > .users form {
+  margin: 0;
+  border: none;
+  background: transparent;
+}
+
+.user-menu-info > div > .users form button {
+  padding-top: 2.5px;
+}
+
+.user-menu-info form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: white;
+  margin: 30px;
+  border: solid 1px rgba(183, 183, 183, 0.685);
+  border-radius: 5px;
+}
+
+.user-menu-info form > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 25px;
+}
+
+.user-menu-info form > div > input[type=text] {
+  border: solid 1px rgba(183, 183, 183, 0.685);
+  border-radius: 5px;
+  height: 40px;
+  padding-left: 10px;
+  font-size: 120%;
+}
+
+.user-menu-info form > div label {
+  text-transform: uppercase;
+  padding: 5px 0;
+  color: rgba(122, 122, 122, 0.685);
+}
+
+.user-menu-info .tweets {
+  margin: 15px 30px;
+  background-color: white;
+  border: solid 1px rgba(183, 183, 183, 0.685);
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.user-menu-info .tweets h4 {
+  margin: 25px;
+  padding-bottom: 25px;
+  border-bottom: solid 1px rgba(183, 183, 183, 0.685);
+}
+
+.user-menu-info .tweets h4 > :first-child {
+  color: blue;
+}
+
+.user-menu-info .profile-img {
+  padding: 0 25px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+}
+
+.user-menu-info .profile-img figure {
+  border-radius: 0;
+}
+
+.user-menu-info .profile-info {
+  width: 100%;
+  -webkit-box-flex: 1;
+      -ms-flex: auto;
+          flex: auto;
+}
+
+.user-menu-info .profile-info p {
+  text-transform: capitalize;
+  width: 100%;
+}
+
+.user-menu-info .profile-info span {
+  width: 100%;
+}
+
+@media only screen and (min-width: 768px) {
+  .user-show {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 2fr 1fr 1fr;
+        grid-template-columns: 2fr 1fr 1fr;
+    -ms-grid-rows: 294px calc(100% - 294px);
+        grid-template-rows: 294px calc(100% - 294px);
+        grid-template-areas: 'cover cover profile' 'content content profile';
+    min-height: 100vh;
+    background-color: whitesmoke;
+  }
+  .index {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 2fr 1fr 1fr;
+        grid-template-columns: 2fr 1fr 1fr;
+    -ms-grid-rows: 294px calc(100% - 294px);
+        grid-template-rows: 294px calc(100% - 294px);
+        grid-template-areas: 'content content profile' 'content content profile';
+    min-height: 100vh;
+    background-color: whitesmoke;
+  }
+  > input[type=text] {
+    border: solid 1px rgba(183, 183, 183, 0.685);
+    border-radius: 5px;
+    height: 2em;
+  }
+  .profile {
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 2;
+    -ms-grid-column: 3;
+    grid-area: profile;
+  }
+  .content {
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 2;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+    grid-area: content;
+  }
+  .cover {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+    grid-area: cover;
+  }
+}
+/*# sourceMappingURL=user_profile.css.map */

@@ -9,13 +9,17 @@ class FallowingsControllerTest < ActionDispatch::IntegrationTest
 
   test 'should post create' do
     user = users(:user_002)
-    post followings_path, params: { followed_id: user.id }
+    post followings_path, params: { followed_id: user.id },
+                          headers: { 'HTTP_REFERER' => 'http://www.example.com/' }
+    get root_path
     assert_response :success
   end
 
   test 'should delete' do
     user = users(:user_002)
-    delete following_path(user), params: { friend: user.id }
+    delete following_path(user), params: { friend: user.id },
+                                 headers: { 'HTTP_REFERER' => 'http://www.example.com/' }
+    get root_path
     assert_response :success
   end
 end

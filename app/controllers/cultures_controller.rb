@@ -1,27 +1,24 @@
 class CulturesController < ApplicationController
   def index
     @users = User.all
-    @culture = Culture.new
     @user = current_user
     @tweets = Culture.all
     @index = people_to_fallow
-    # rubocop: disable Naming/MemoizedInstanceVariableName
-    @partial ||= sub_menu(params[:menu])
-    # rubocop: enable Naming/MemoizedInstanceVariableName
+    commun_operation
   end
 
   def show
     @user = User.find(params[:id])
     follower_list = @user.followeds.select(:follower_id).limit(3)
     @followed_by ||= User.all.where(id: follower_list)
-    @partial ||= sub_menu(params[:menu])
     @partial_name ||= params[:partial]
-    @culture = Culture.new
+    commun_operation
   end
 
   def create
-    current_user.cultures.create(form_parms)
-    redirect_to request.referrer unless request.referrer.nil?
+    user = current_user.cultures.new(form_parms)
+    user.save
+    redirect_to request.referrer
   end
 
   private
@@ -32,15 +29,18 @@ class CulturesController < ApplicationController
     else 'user_list'
     end
   end
-end
 
-private
+  def form_parms
+    params.require(:culture).permit(:text)
+  end
 
-def form_parms
-  params.require(:culture).permit(:text)
-end
+  def people_to_fallow
+    follower_list = @user.followers.select(:followed_id)
+    User.all.order(:created_at).reverse_order.includes([:profile_img_attachment]).where.not(id: follower_list)
+  end
 
-def people_to_fallow
-  follower_list = @user.followers.select(:followed_id)
-  User.all.order(:created_at).reverse_order.where.not(id: follower_list)
+  def commun_operation
+    @partial ||= sub_menu(params[:menu])
+    @culture = Culture.new
+  end
 end

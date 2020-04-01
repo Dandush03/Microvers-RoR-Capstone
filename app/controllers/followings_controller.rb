@@ -1,11 +1,12 @@
 class FollowingsController < ApplicationController
   def create
-    current_user.followers.create(followed_id: params[:id])
-    redirect_to request.referrer unless request.referrer.nil?
+    follow = current_user.followers.new(followed_id: params[:id])
+    follow.save
+    redirect_to request.referrer
   end
 
   def destroy
     current_user.followers.find_by(followed_id: params[:friend]).destroy
-    redirect_to request.referrer unless request.referrer.nil?
+    redirect_to request.referrer
   end
 end

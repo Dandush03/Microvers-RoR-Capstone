@@ -12,7 +12,7 @@ class CulturesControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-  test 'should get new' do
+  test 'should show' do
     user = users(:user_001)
     get culture_path(user)
     assert_response :success
@@ -20,7 +20,9 @@ class CulturesControllerTest < ActionDispatch::IntegrationTest
 
   test 'should post create' do
     text = 'this is a sample test'
-    post cultures_path, params: { culture: { text: text } }
+    post cultures_path, params: { culture: { text: text } },
+                        headers: { 'HTTP_REFERER' => 'http://www.example.com/' }
+    get root_path
     assert_response :success
   end
 end
