@@ -1,0 +1,18 @@
+development:
+  cloud_name: dl-cultures
+  api_key: '631164532291153'
+  api_secret: wAZTwb_yyH4el7XFvh2lUvJtzZ4
+  enhance_image_tag: true
+  static_file_support: false
+production:
+  cloud_name: dl-cultures
+  api_key: '631164532291153'
+  api_secret: wAZTwb_yyH4el7XFvh2lUvJtzZ4
+  enhance_image_tag: true
+  static_file_support: true
+test:
+  cloud_name: dl-cultures
+  api_key: '631164532291153'
+  api_secret: wAZTwb_yyH4el7XFvh2lUvJtzZ4
+  enhance_image_tag: true
+  static_file_support: false

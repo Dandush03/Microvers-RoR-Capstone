@@ -1,0 +1,553 @@
+$pad-width: 768px;
+$buttons-color: rgba(122, 122, 122, 0.685);
+$space: 5px;
+$font-size: 1em;
+$p-100: 100%;
+$header-color: rgba(80, 164, 226, 1);
+
+.user-show {
+  display: flex;
+  flex-direction: column;
+}
+
+.cover {
+  grid-area: wrapper;
+  display: flex;
+  overflow: hidden;
+  width: $p-100;
+  height: $space*59;
+  order: 1;
+
+  &>figure {
+    width: $p-100;
+    height: $p-100;
+    margin: 0;
+    padding: 0;
+    position: relative;
+  }
+
+  &>figure.self-cover {
+
+
+    &>form {
+
+      //display: none;
+      input[type="file"] {
+        display: none;
+        height: $p-100;
+      }
+
+      .uploader {
+        position: absolute;
+        color: transparent;
+        z-index: 2;
+        width: $p-100;
+        height: $p-100;
+        background-color: transparent;
+
+        &:hover::before {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: $p-100;
+          height: $p-100;
+          background: image-url('upload.svg');
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
+          opacity: 0.5;
+          z-index: 1;
+          cursor: pointer;
+        }
+      }
+    }
+
+    &>a {
+      width: $p-100;
+      height: $p-100;
+      position: relative;
+      display: block;
+
+      &>img {
+        width: $p-100;
+        height: $p-100;
+        ;
+        position: absolute;
+      }
+    }
+  }
+
+  &>figure.viewer-cover {
+    width: $p-100;
+    height: $p-100;
+    position: relative;
+    display: block;
+
+    &>img {
+      width: $p-100;
+      height: $p-100;
+      ;
+      position: absolute;
+    }
+  }
+
+  figure div {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: $p-100;
+    height: $p-100;
+    background: image-url('upload.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.5;
+    z-index: 1;
+  }
+}
+
+.current-follow {
+  border-bottom: $space/5 solid $buttons-color*1.5;
+  margin: $space*2;
+  padding: $space*2;
+  height: $space*8;
+  overflow: hidden;
+
+  p {
+    margin: 0;
+    text-transform: uppercase;
+    color: $buttons-color*.5;
+  }
+}
+
+.profile {
+  order: 2;
+  border-left: solid $space/3 $buttons-color*1.5;
+  display: flex;
+  flex-direction: column;
+
+  .profile-data {
+    .profile-btns {
+      height: $space*35;
+      justify-content: center;
+      display: flex;
+      flex-wrap: wrap-reverse;
+
+      &>div {
+        display: flex;
+        justify-content: center;
+        height: $space*28;
+        align-self: baseline;
+
+        .follow-btn {
+          display: flex;
+          justify-content: center;
+          align-self: center;
+          margin: $space*2;
+          border: solid $buttons-color $space/2;
+          border-radius: $p-100*2;
+          width: $space*10;
+          height: $space*10;
+
+          i {
+            align-self: center;
+          }
+
+          form {
+            display: flex;
+
+            button {
+              align-self: center;
+              background-color: transparent;
+              border: none;
+            }
+          }
+
+          path {
+            fill: $buttons-color;
+          }
+        }
+
+        .profile-img {
+          grid-area: wrapper;
+          display: flex;
+          overflow: hidden;
+          justify-content: center;
+
+          &>figure {
+            align-self: center;
+            width: $space*28;
+            height: $space*28;
+            border: solid $space/5 transparent;
+            border-radius: $p-100/2;
+            margin: 0;
+            padding: 0;
+            position: relative;
+            overflow: hidden;
+          }
+
+          &>figure.self-profile {
+
+            &>form {
+
+              input[type="file"] {
+                display: none;
+                height: $p-100;
+              }
+
+              .uploader {
+                position: absolute;
+                color: transparent;
+                z-index: 2;
+                width: $p-100;
+                height: $p-100;
+                background-color: transparent;
+
+                &:hover::before {
+                  content: "";
+                  position: absolute;
+                  top: 0;
+                  left: 0;
+                  width: $p-100;
+                  height: $p-100;
+                  background: image-url('upload.svg');
+                  background-position: center;
+                  background-repeat: no-repeat;
+                  background-size: cover;
+                  opacity: 0.5;
+                  z-index: 1;
+                  cursor: pointer;
+                }
+              }
+            }
+
+            &>a {
+              width: $p-100;
+              height: $p-100;
+              position: relative;
+              display: block;
+
+              &>img {
+                width: $p-100;
+                height: $p-100;
+                position: absolute;
+              }
+            }
+          }
+
+          &>figure.viewer-profile {
+
+            &>img {
+              width: $p-100;
+              height: $p-100;
+            }
+
+          }
+
+          figure div {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: $p-100;
+            width: $p-100;
+            background: image-url('upload.svg');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-color: white;
+            opacity: 0.5;
+            z-index: 1;
+          }
+        }
+      }
+    }
+
+    .profile-info {
+      text-align: center;
+      padding: $space;
+
+      &>p {
+        margin-bottom: 0;
+      }
+
+      &>span {
+        color: $buttons-color*.5;
+      }
+    }
+  }
+
+  .followers-data {
+    display: flex;
+    flex-direction: row;
+
+    &>div {
+      width: $p-100/3;
+      display: flex;
+      justify-content: center;
+      padding: $space*1.5;
+      border: solid $buttons-color*1.8 $space/5;
+      flex-direction: column;
+      text-align: center;
+
+      p {
+        margin: 0;
+        font-weight: bold;
+        text-transform: uppercase;
+      }
+
+      span {
+        color: $buttons-color*1;
+      }
+    }
+  }
+}
+
+.followers {
+  display: flex;
+
+  figure {
+    justify-self: center;
+    position: relative;
+    border: solid $space/5 transparent;
+    margin: $space*2;
+    border-radius: $p-100/2;
+    height: $space*15;
+    width: $space*15;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .profile-info {
+    align-self: center;
+    flex: 0 0 $space*30;
+
+    p {
+      margin: 0;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+
+    span {
+      color: $buttons-color*1;
+    }
+  }
+
+  .profile-btns {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    margin: $space*2;
+    border: solid $buttons-color $space/2;
+    border-radius: $p-100*2;
+    width: $space*5;
+    height: $space*5;
+
+    i {
+      align-self: center;
+    }
+
+    form {
+      display: flex;
+
+      button {
+        align-self: center;
+        background-color: transparent;
+        border: none;
+      }
+    }
+
+    path {
+      fill: $buttons-color;
+    }
+  }
+}
+
+.user-menu {
+  &>nav {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+    overflow: hidden;
+    height: $space*10.4;
+    align-content: center;
+    border-bottom: $space/5 solid $buttons-color*1.5;
+
+    a {
+      align-self: center;
+      padding: $space*3 $space*4;
+      text-transform: capitalize;
+      text-decoration: none;
+      color: $buttons-color*.5;
+    }
+
+    .active {
+      border-bottom: $space/3 solid blue;
+    }
+  }
+}
+
+.user-menu-info {
+  &>div {
+    &>.users {
+      margin: $space*6;
+      padding-left: $space*3;
+      background-color: white;
+      border: solid $space/5 $buttons-color*1.5;
+      border-radius: $space;
+
+      .profile-img {
+        order: 2;
+        padding-left: 0;
+      }
+
+      .profile-info {
+        order: 3;
+      }
+
+      .profile-btns {
+        order: 1;
+      }
+
+      form {
+        margin: 0;
+        border: none;
+        background: transparent;
+
+        button {
+          padding-top: $space/2;
+        }
+      }
+    }
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    margin: $space*6;
+    border: solid $space/5 $buttons-color*1.5;
+    border-radius: $space;
+
+    &>div {
+      display: flex;
+      flex-direction: column;
+      padding: $space*5;
+
+      &>input[type=text] {
+        border: solid $space/5 $buttons-color*1.5;
+        border-radius: $space;
+        height: $space*8;
+        padding-left: $space*2;
+        font-size: $p-100*1.2;
+      }
+
+      label {
+        text-transform: uppercase;
+        padding: $space 0;
+        color: $buttons-color;
+      }
+    }
+  }
+
+  .tweets {
+    margin: $space*3 $space*6;
+    background-color: white;
+    border: solid $space/5 $buttons-color*1.5;
+    border-radius: $space;
+    overflow: hidden;
+
+    h4 {
+      margin: $space*5;
+      padding-bottom: $space*5;
+      border-bottom: solid $space/5 $buttons-color*1.5;
+
+      &>:first-child {
+        color: blue;
+      }
+    }
+  }
+
+  .profile-img {
+    padding: 0 $space*5;
+    display: flex;
+    flex-wrap: nowrap;
+
+    figure {
+      border-radius: 0;
+    }
+  }
+
+  .profile-info {
+    width: $p-100;
+    flex: auto;
+
+    p {
+      text-transform: capitalize;
+      width: $p-100;
+    }
+
+    span {
+      width: $p-100;
+    }
+  }
+}
+
+.new_culture {
+  .actions {
+    input {
+      float: right;
+      margin-top: $space*4;
+      padding: $space*1.5;
+      border-radius: $space;
+      background-color: $header-color;
+      color: white;
+    }
+  }
+}
+
+
+@media only screen and (min-width: $pad-width) {
+  .user-show {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-rows: $space*58.8 calc(#{$p-100} - #{$space*58.8});
+    grid-template-areas: 'cover cover profile'
+      'content content profile';
+    min-height: 100vh;
+    background-color: whitesmoke;
+  }
+
+  .index {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-rows: $space*58.8 calc(#{$p-100} - #{$space*58.8});
+    grid-template-areas: 'content content profile'
+      'content content profile';
+    min-height: 100vh;
+    background-color: whitesmoke;
+  }
+
+  &>input[type=text] {
+    border: solid $space/5 $buttons-color*1.5;
+    border-radius: $space;
+    height: 2em;
+  }
+
+  .profile {
+    grid-area: profile;
+  }
+
+  .content {
+    grid-area: content;
+  }
+
+  .cover {
+    grid-area: cover;
+  }
+}

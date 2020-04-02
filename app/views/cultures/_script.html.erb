@@ -1,0 +1,23 @@
+<script type="text/javascript">
+
+  function OnFileChange(elem) {
+    var fileName = elem.files[0].name;
+    var extFile = fileName.split('.').pop();
+
+    if (extFile=="jpg" || extFile=="jpeg" || extFile=="png"){
+      elem.parentNode.submit();
+    }else{
+      alert("Only jpg/jpeg and png files are allowed!");
+    }
+  };
+
+/* document.getElementById("user_cover_img").onchange = function() {
+    var fileName = this.files[0].name;
+    var extFile = fileName.split('.').pop();
+    if (extFile=="jpg" || extFile=="jpeg" || extFile=="png"){
+      document.getElementById("form").submit();
+    }else{
+      alert("Only jpg/jpeg and png files are allowed!");
+    }
+  }; */
+</script>

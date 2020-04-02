@@ -1,0 +1,158 @@
+// Place all the styles related to the Cultures controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+$pad-width: 768px;
+$form-width: 330px;
+$form-color: rgba(36, 49, 71, 0.5);
+$form-field-color: rgba(36, 49, 71, 0.7);
+$form-lbl-color: rgba(249, 251, 255, 0.5);
+$form-input-color: rgba(249, 251, 255, 0.801);
+$form-warning-color: rgba(255, 121, 121, 1);
+$form-warning-title-color: rgba(255, 177, 77, 1);
+$space: 5px;
+$font-size:1em;
+
+.container {
+  margin: auto;
+  max-width: $pad-width;
+  height: 100%;
+}
+
+.wrapper {
+  &>div {
+    display: flex;
+    z-index: 1;
+    margin-bottom: $space*8;
+  }
+}
+
+.session {
+  width: $form-width;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  background-color: $form-color;
+  border-radius: $space;
+
+  &>h2 {
+    color: $form-input-color;
+    margin: $space*5 auto $space*0 auto;
+  }
+
+  &>form {
+    &>.errors {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+
+      &>p {
+        color: $form-warning-title-color;
+      }
+
+      &>ul {
+        width: 90%;
+        display: flex;
+        flex-wrap: wrap;
+        list-style: none;
+        margin: 0 $space*5;
+        padding: 0;
+
+        &>li {
+          color: $form-warning-color;
+          padding: 0 $space*2;
+        }
+      }
+    }
+
+    &>.errors.login {
+      &>p {
+        margin-bottom: 0;
+      }
+    }
+
+    .field_with_errors {
+      width: 100%;
+    }
+
+    &>.field {
+      background-color: $form-field-color;
+      display: flex;
+      margin: $space*8 $space*6;
+      border: white solid $space/5;
+      border-radius: $space;
+      align-items: flex-start;
+      position: relative;
+      overflow: hidden;
+
+      &>label {
+        position: absolute;
+        padding: $space;
+        color: $form-lbl-color;
+      }
+
+      input {
+        width: 100%;
+        padding: $space*5 $space*4 $space*2 $space*4;
+        font-size: $font-size*1.4;
+        border: none;
+        background-color: transparent;
+        color: $form-input-color;
+      }
+    }
+
+    &>.remember {
+      margin: 0 $space*6;
+      color: $form-input-color;
+    }
+
+    &>.actions {
+      display: flex;
+      margin: $space*8 $space*6 $space*12 $space*6;
+
+      &>input {
+        padding: $space*2;
+        margin: auto;
+        width: 100%;
+        color: $form-input-color;
+        background-color: $form-field-color*3;
+        border: white solid $space/5;
+        border-radius: $space;
+      }
+    }
+  }
+}
+
+.links {
+  display: flex;
+  align-self: center;
+  margin-bottom: $space*6;
+
+  &>:first-child {
+    &::before {
+      content: "";
+    }
+  }
+
+  &>a {
+    margin: $space*3;
+    text-decoration: none;
+    color: $form-warning-title-color;
+    position: relative;
+
+    &::before {
+      position: absolute;
+      content: "|";
+      display: block;
+      right: calc(100% + #{$space*3});
+    }
+
+  }
+}
+
+@media only screen and (min-width: $pad-width) {
+  $form-width: 450px;
+
+  .session {
+    width: $form-width;
+  }
+}

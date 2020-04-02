@@ -1,0 +1,12 @@
+<section class="user-menu">
+  <nav>
+    <%= link_to "tweets", url_for(:id => @user.id, :menu => nil, :partial => "tweets"), class: "link#{" active" if @partial_name == "tweets" || @partial_name.nil?}" %>
+    <%= link_to "followers", url_for(:id => @user.id, :menu => 1, :partial => "followings"), class: "link#{" active" if @partial_name == "followings"}" unless current_page?(root_path) %>
+    <%= link_to "followings", url_for(:id => @user.id, :menu => 1, :partial => "followers"), class: "link#{" active" if @partial_name == "followers"}" unless current_page?(root_path) %>
+  </nav>
+</section>
+<section class="user-menu-info">
+  <div id="content">
+    <%= render @partial, :users => get_object(@user, @partial_name) %>
+  </div>
+</section>
