@@ -16,6 +16,7 @@ This app behaves as a Twitter-lite app. It allows users to follow and unfollow o
 - [Live Link](#Active-Link-to-Website)
 - [Contributing](#Contributing)
 - [Acknowledgments](#Acknowledgments)
+- [Future Release](#Future-Release)
 - [License](#License)
 - [Author](#Authors)
 
@@ -57,6 +58,15 @@ Feel free to check the [issues page](./issues/).
 - Special to Gregoire Vella for his [Awesome](https://www.behance.net/gallery/14286087/Twitter-Redesign-of-UI-details) Design 
 - Thanks to Microverse for it Support!
 - Special thanks to learnenought.com
+
+---
+
+## Future Release
+
+- Direct messagues between people.
+- Direct tweets between people.
+- Upgrade password security.
+- ruby update to 3.0 from 2.6
 
 ---
 
