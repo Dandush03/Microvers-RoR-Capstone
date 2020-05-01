@@ -35,6 +35,10 @@ This app behaves as a Twitter-lite app. It allows users to follow and unfollow o
 
 Check out the page at this [live link](https://dl-cultures.herokuapp.com/)
 
+> This Website could be access with the fallowing credentials: 
+> User: admin
+> Pwd: admin123
+
 ---
 
 ## Contributing
