@@ -66,7 +66,7 @@ Feel free to check the [issues page](./issues/).
 - Direct messagues between people.
 - Direct tweets between people.
 - Upgrade password security.
-- ruby update to 3.0 from 2.6
+- Ruby update to 3.0 from 2.6
 
 ---
 
