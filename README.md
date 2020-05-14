@@ -36,7 +36,7 @@ This app behaves as a Twitter-lite app. It allows users to follow and unfollow o
 
 Check out the page at this [live link](https://dl-cultures.herokuapp.com/)
 
-> This Website could be access with the fallowing credentials: 
+> This Website could be accessed with the following credentials: 
 
 > User: admin
 
@@ -54,16 +54,16 @@ Feel free to check the [issues page](./issues/).
 
 ## Acknowledgments
 
-- Hat tip to anyone whose code was used
+- Hat tip to anyone who's code was used
 - Special to Gregoire Vella for his [Awesome](https://www.behance.net/gallery/14286087/Twitter-Redesign-of-UI-details) Design 
-- Thanks to Microverse for it Support!
+- Thanks to Microverse for its Support!
 - Special thanks to learnenought.com
 
 ---
 
 ## Future Release
 
-- Direct messagues between people.
+- Direct messages between people.
 - Direct tweets between people.
 - Upgrade password security.
 - Ruby update to 3.0 from 2.6
